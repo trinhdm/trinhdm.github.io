@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>doreen trinh portfolio</title>
+
+
+
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap-theme.css">
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap-theme.css.map">
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap-theme.min.css">
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap-theme.min.css.map">
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap.css">
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap.css.map">
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap.min.css">
+<link rel="stylesheet" type="type/css" href="bootstrap-3.3.6-dist\css\bootstrap.min.css.map">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="type/css" href="style.css">
+
+
+<script src="jquery.js"></script>
+<script>
+function scrollNav() {
+  $('.nav a').click(function(){
+    //Toggle Class
+    $(".active").removeClass("active");
+    $(this).closest('li').addClass("active");
+    var theClass = $(this).attr("class");
+    $('.'+theClass).parent('li').addClass('active');
+    //Animate
+    $('html, body').stop().animate({
+        scrollTop: $( $(this).attr('href') ).offset().top - 160
+    }, 400);
+    return false;
+  });
+  $('.scrollTop a').scrollTop();
+}
+scrollNav();
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Portfolio, Web Development, HTML, CSS, Front End, Development">
+<meta name="description" content="doreen m. trinh's portfolio">
+<meta name="author" content="Doreen Mia Trinh">
+<meta charset="utf-8">
+
+
+
+
+<body>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+<nav class="fixed-nav-bar">
+  <ul class="nav">
+        <li>DMT | </li>
+        <li class="active"><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact" id="hire">Contact Me</a></li>
+        <li><a href="#">doreenmtrinh@gmail.com</a></li>
+      </ul>
+</nav>
+    <h1 id="home"></h1>
+
+
+<div class="container-fluid" id="headerBG" style="background-image: url('http://10-themes.com/data_images/wallpapers/21/363317-mountains.jpg')">
+  <div class="article image overlay">
+<div class="Absolute-Center is-Left" id="box">
+<h1>Hello.</h1>
+
+<p>I'm Doreen Trinh. I'm a designer based in Southern California.<br>
+I specialize in UX/UI design, but I also enjoy graphic design and marketing.<br>
+As Thomas J. Watson from IBM stated, "Good Design is Good Business."</p>
+<br><br><br>
+
+<p class="button">learn more</p> <p class="button" style="width: 130px; text-align: center;">resume</p>
+</div>
+</div></div>
+  <h1 id="skills"></h1>
+<br><br><br><br>
+
+<div class="container-fluid services">
+
+<center>I love creating <b>simplistic</b> & <b>functional</b> websites. Below are some of the services I provide.</center>
+</div><br><br>
+
+<div class="container-fluid rowbg"><center>
+  <div class="row">
+    <div class="col-sm-4">
+      <center><h3 class="fa fa-html5 fa-5x"></h3></center>
+      <p><a href="home.html">Lorem ipsum dolor sit amet, consectetur</a> adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <center><h3 class="fa fa-paint-brush fa-5x"></h3></center>
+      <p><b>Lorem ipsum dolor sit amet, consectetur adipisicing</b> elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <center><a href="#" class="faHover"><h3 class="fa fa-mobile phone fa-5x"></a></h3></center>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+  <a name="about"></a>
+<div class="container" id="imgpad">
+  <img src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/10330393_10153357738878194_8724820141996819569_n.jpg?oh=6ee163046e6628a2c6d7143406a53db9&oe=571C263B"
+  style="width: 30%;
+    height: 30%;
+    float: left;
+    padding-top: 0px;
+    padding-right: 0px;">
+  <h2>About Me</h2><br>
+  I taught myself HTML and CSS at the age of 10 because I honestly really wanted
+  to have a dope user layout on Neopets. Instead of progressing my hobbies into
+  a career, I decided to pursue my interests in International Studies at University
+  of California, Irvine. I hoped to become a lawyer or a paralegal (I guess you can
+  say that I was greatly inspired by the show <i>Suits</i>..) but look at where I am now. Back to being a front-
+  end developer. And I don't regret it one bit.
+</div>
+<br><br>
+
+<div class="container-fluid" id="footer">
+Designed & Coded by Doreen Trinh.
+</div>
+
+
+</body>
+
+</head>
+</html>
