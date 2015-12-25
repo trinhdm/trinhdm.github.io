@@ -1,3 +1,5 @@
+/* default styling */
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -19,7 +21,7 @@ b {
   font-weight: bold;
 }
 
-a {
+a, a:link {
   color: #39DB49;
   font-weight: bold;
 }
@@ -98,10 +100,16 @@ ul.nav li {
   display: inline-block;
 }
 
-ul.nav li a, a:active {
+ul.nav li a {
   padding: 19px 30px;
   color: #aaa;
   font: 11px Arial;
+}
+
+ul.nav li a:focus, ul.nav li a:active,
+#p1:target, #p2:target, #p3:target, #p4:target,
+#p1:focus, #p2:focus, #p3:focus, #p4:focus {
+  background-color: #222 !important;
 }
 
 ul.nav li a:hover {
