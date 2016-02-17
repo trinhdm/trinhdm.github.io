@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Zoom Function test</title>
+
+  <!-- Jquery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="zoom.css">
+
+  <!-- Include jQuery. -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+
+  <!-- Include Cloud Zoom CSS. -->
+  <link rel="stylesheet" type="text/css" href="cloudzoom.css" />
+
+  <!-- Include Cloud Zoom script. -->
+  <script type="text/javascript" src="cloudzoom.js"></script>
+
+  <!-- Call quick start function. -->
+  <script type="text/javascript">
+      CloudZoom.quickStart();
+  </script>
+
+  <!-- Add fancyBox -->
+<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+</head>
+<body>
+
+
+<div class="header-content">
+  <div class="contain">
+  <div class="left">
+     <section class="gallery">
+  <article id="one" class="target">
+    <figure>
+      <a class="fancybox" rel="group" href="images/1_rsz.jpg">
+        <img class = "cloudzoom" src = "images/1_rsz.jpg"
+               data-cloudzoom = "zoomImage: 'images/1.jpg', zoomPosition: 'inside'" />
+             </a>
+    </figure>
+  </article>
+  <article id="two" class="target">
+    <figure>
+      <a class="fancybox" rel="group" href="images/2_rsz.jpg">
+        <img class = "cloudzoom" src = "images/2_rsz.jpg"
+               data-cloudzoom = "zoomImage: 'images/2.jpg', zoomPosition: 'inside'" />
+             </a>
+    </figure>
+  </article>
+  <article id="three" class="target">
+    <figure>
+      <a class="fancybox" rel="group" href="images/3_rsz.jpg">
+        <img class = "cloudzoom" src = "images/3_rsz.jpg"
+               data-cloudzoom = "zoomImage: 'images/3.jpg', zoomPosition: 'inside'" />
+             </a>
+    </figure>
+  </article>
+<div class="gallery-contain">
+  <nav>
+      <ul>
+        <li><a href="#one"><img src="images/1_rsz.jpg"></a></li>
+        <li><a href="#two"><img src="images/2_rsz.jpg"></a></li>
+        <li><a href="#three"><img src="images/3_rsz.jpg"></a></li>
+      </ul>
+</div>
+</section>
+
+
+</div>
+<div class="right"><p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
+<p>Et sausage tail dolore, veniam drumstick hamburger strip steak aliquip ham. Bresaola ipsum sint ribeye doner consequat capicola culpa. Quis tongue ball tip meatball tri-tip nostrud alcatra pariatur dolore culpa fatback ribeye turducken. T-bone meatball nostrud, qui cow in occaecat ipsum dolore rump nulla duis kielbasa shoulder sint. Elit t-bone non corned beef landjaeger, aliquip est pork loin deserunt chicken. Beef ribs eu nulla jerky occaecat deserunt shankle alcatra tenderloin proident frankfurter cupim aliqua. Chicken ribeye hamburger tail, laborum turkey ullamco aliquip.</p>
+</div>
+<div class="clear"></div></div>
+</div>
