@@ -1,3 +1,8 @@
+// logic
+// have an array of images and a variable = # of thumbnails
+// switches out image when you click on thumbnail
+// this is unfinished
+
 // next: find next element and show when clicked left/right navigational buttons
 // http://stackoverflow.com/questions/16611694/jquery-find-next-image-after-the-clicked-instance
 // http://stackoverflow.com/questions/8724200/implementing-jquery-next-in-a-simple-image-slide-show
@@ -64,7 +69,7 @@ numThumb = 4;       // number of thumbnails showing
      $('.thumbnailArrows').click(function() {                                   // if you click on the image w/ the class thumbnailArrows
         var whichArrow = $(this).children('img').attr('id');                    // assign this click to this variable
         var galleryWidth = $('#thumbGallery').width();                          // used to change the thumbnail gallery
-        var imgWidth = $('#imageContain img').width();                          // used to change image by image
+        var imgWidth = $('#imageContain img').width();                          // used to change image to next image
         var pos = $('#imageContain').position();                                // returns position of the div
         var positionLeft = pos.left;                                            // returns current left position as a string
         if (whichArrow == 'goLeft'){                                            // if the left navigation arrow gets clicked
@@ -72,6 +77,7 @@ numThumb = 4;       // number of thumbnails showing
                 // do nothing
             } else {                                                            // if not 0, positionLeft will be a negative number
                 $('#imageContain').css('left', positionLeft + imgWidth);        // add the positionLeft to the width of image to set positionLeft back to 0
+                changeImage(imgIndex + 1);
             }                                                                   // moves thumbnail left to the next image
         }
         else {                                                                           // else if the right navigation arrow gets clicked
@@ -79,7 +85,9 @@ numThumb = 4;       // number of thumbnails showing
                 //do nothing;
             } else {                                                                     // else if we haven't reached the end
                 $('#imageContain').css('left', positionLeft - imgWidth);                 // we take positionLeft - width of image to move the image to the next image
+                changeImage(imgIndex - 1);
             }
+
         }                                                                                // IMPORTANT: if you want to scroll 1 window at a time (change thumbanils to next set of images)
     });                                                                                  // then change imgWidth to galleryWidth
 
