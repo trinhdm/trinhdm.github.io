@@ -1,7 +1,6 @@
-// logic
-// have an array of images and a variable = # of thumbnails
-// switches out image when you click on thumbnail
-// this is unfinished
+// next: find next element and show when clicked left/right navigational buttons
+// http://stackoverflow.com/questions/16611694/jquery-find-next-image-after-the-clicked-instance
+// http://stackoverflow.com/questions/8724200/implementing-jquery-next-in-a-simple-image-slide-show
 
 
 images = ['http://d1ya1fm0bicxg1.cloudfront.net/2014/07/promoted-media-optimized_53da4ae651490.jpg',
@@ -64,24 +63,25 @@ numThumb = 4;       // number of thumbnails showing
      // clicking the navigation arrows and moving the thumbGallery
      $('.thumbnailArrows').click(function() {                                   // if you click on the image w/ the class thumbnailArrows
         var whichArrow = $(this).children('img').attr('id');                    // assign this click to this variable
-        var galleryWidth = $('#thumbGallery').width();                          // sets width of div thumbGallery to a variable
+        var galleryWidth = $('#thumbGallery').width();                          // used to change the thumbnail gallery
+        var imgWidth = $('#imageContain img').width();                          // used to change image by image
         var pos = $('#imageContain').position();                                // returns position of the div
         var positionLeft = pos.left;                                            // returns current left position as a string
         if (whichArrow == 'goLeft'){                                            // if the left navigation arrow gets clicked
             if (positionLeft == 0){                                             // if position = 0 do nothing
                 // do nothing
             } else {                                                            // if not 0, positionLeft will be a negative number
-                $('#imageContain').css('left', positionLeft + galleryWidth);    // add the positionLeft to the width of div to set positionLeft back to 0
-            }                                                                   // moves gallery left to the next set of thumbnail images
+                $('#imageContain').css('left', positionLeft + imgWidth);        // add the positionLeft to the width of image to set positionLeft back to 0
+            }                                                                   // moves thumbnail left to the next image
         }
-        else {                                                                               // else if the right navigation arrow gets clicked
-            if ($('#imageContain').width() <= galleryWidth + Math.abs(positionLeft)){        // if width of the div is <= to (width of div + |positionLeft|) then donothing, we reached the end of our images
+        else {                                                                           // else if the right navigation arrow gets clicked
+            if ($('#imageContain').width() <= imgWidth + Math.abs(positionLeft)){        // if width of the image is <= to (width of image + |positionLeft|) then donothing, we reached the end of our images
                 //do nothing;
-            } else {                                                                         // else if we haven't reached the end
-                $('#imageContain').css('left', positionLeft - galleryWidth);                 // we take positionLeft - width of div to move the gallery right to the next set of thumbnail images
+            } else {                                                                     // else if we haven't reached the end
+                $('#imageContain').css('left', positionLeft - imgWidth);                 // we take positionLeft - width of image to move the image to the next image
             }
-        }
-    });
+        }                                                                                // IMPORTANT: if you want to scroll 1 window at a time (change thumbanils to next set of images)
+    });                                                                                  // then change imgWidth to galleryWidth
 
 
 
