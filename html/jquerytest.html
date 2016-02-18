@@ -1,0 +1,139 @@
+<style type="text/css">
+#slideshow {
+  max-height: 350px;
+  max-width: 350px;
+}
+
+#hold {
+  height: 350px;
+  width: 350px;
+  position:relative;
+  z-index:1;
+  text-align:center; /* centers image */
+  overflow:hidden;
+}
+
+#thumbnails { /* thumbnails width = thumbGallery width + (thumbnailArrows width)*2 */
+  width: 360px;
+  height: 70px;
+  margin-top:20px;
+}
+
+#thumbGallery {
+  width: 310px;
+  height: 70px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+#imageContain { /* width is dynamically set by js */
+  height: 70px;
+  position: absolute;
+  top:0px;
+  left:0px;
+}
+
+#imageContain img {
+  width: 65px;
+  height: 65px;
+  float: left;
+}
+
+#thumbnails .thumbnailArrows {
+  width: 25px;
+  float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#thumbnails .thumbnailArrows img {
+  width: 20px;
+  height: auto;
+}
+
+#thumbnails .thumbnailArrows:hover {
+  cursor:pointer;
+}
+
+.borderNormal {
+  border: 1px solid #ddd;
+}
+
+.borderClass {
+  border: 1px solid #000;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.header-content .contain {
+    margin: 0 auto;
+    width: 900px;
+    display: flex;
+}
+
+.header-content .contain .left {
+  width: 40%;
+  margin-right: 30px;
+  overflow: hidden;
+}
+
+.header-content .contain .right {
+  flex: 1;
+}
+
+.header-content .contain .clear {
+  clear: both;
+}
+
+body {
+  font-family: Arial;
+  font-size: 10pt;
+  line-height: 1.375;
+}
+
+h1 {
+  font-family: Georgia;
+}
+</style>
+
+<div class="header-content">
+  <div class="contain">
+  <div class="left">
+
+<div id="hold">
+<img src="http://d1ya1fm0bicxg1.cloudfront.net/2014/07/promoted-media-optimized_53da4ae651490.jpg" id="slideshow" />
+</div>
+<div id="thumbnails">
+    <div class="thumbnailArrows"><img src="http://www.switchlearn.com/1images/leftArrowNavBlack.png" id="goLeft"/>
+    </div>
+    <div id="thumbGallery">
+        <div id="imageContain"></div>
+    </div>
+    <div class="thumbnailArrows"><img src="http://www.switchlearn.com/1images/rightArrowNavBlack.png" id="goRight" />
+    </div>
+</div>
+
+</div>
+<div class="right">
+  <h1>jQuery Slider Test</h1>
+  <p>Bacon ipsum dolor amet esse lorem turducken jerky, culpa dolore ribeye. Mollit aute ut tail porchetta short loin. Do swine short ribs pork loin ball tip capicola pig aliqua excepteur occaecat cillum tenderloin consectetur pork chop quis. Sunt veniam consequat swine ham hock duis bacon.</p>
+<p>Et sausage tail dolore, veniam drumstick hamburger strip steak aliquip ham. Bresaola ipsum sint ribeye doner consequat capicola culpa. Quis tongue ball tip meatball tri-tip nostrud alcatra pariatur dolore culpa fatback ribeye turducken. T-bone meatball nostrud, qui cow in occaecat ipsum dolore rump nulla duis kielbasa shoulder sint. Elit t-bone non corned beef landjaeger, aliquip est pork loin deserunt chicken. Beef ribs eu nulla jerky occaecat deserunt shankle alcatra tenderloin proident frankfurter cupim aliqua. Chicken ribeye hamburger tail, laborum turkey ullamco aliquip.</p>
+<p>Doreen Trinh</p>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="test.js">
+</script>
