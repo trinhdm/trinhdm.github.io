@@ -1,0 +1,106 @@
+#slideshow {
+  max-height: 350px;
+  max-width: 350px;
+}
+
+#hold {
+  height: 350px;
+  width: 350px;
+  position:relative;
+  z-index:1;
+  text-align:center; /* centers image */
+  overflow:hidden;
+}
+
+#thumbnails { /* thumbnails width = thumbGallery width + (thumbnailArrows width)*2 */
+  width: 360px;
+  height: 70px;
+  margin-top:20px;
+}
+
+#thumbGallery {
+  width: 310px;
+  height: 70px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+#imageContain { /* width is dynamically set by js */
+  height: 70px;
+  position: absolute;
+  top:0px;
+  left:0px;
+}
+
+#imageContain img {
+  width: 65px;
+  height: 65px;
+  float: left;
+}
+
+#thumbnails .thumbnailArrows {
+  width: 25px;
+  float: left;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#thumbnails .thumbnailArrows img {
+  width: 20px;
+  height: auto;
+}
+
+#thumbnails .thumbnailArrows:hover {
+  cursor:pointer;
+}
+
+.borderNormal {
+  border: 1px solid #ddd;
+}
+
+.borderClass {
+  border: 1px solid #000;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.header-content .contain {
+    margin: 0 auto;
+    width: 900px;
+    display: flex;
+}
+
+.header-content .contain .left {
+  width: 40%;
+  margin-right: 30px;
+  overflow: hidden;
+}
+
+.header-content .contain .right {
+  flex: 1;
+}
+
+.header-content .contain .clear {
+  clear: both;
+}
+
+body {
+  font-family: Arial;
+  font-size: 10pt;
+  line-height: 1.375;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: Georgia;
+}
