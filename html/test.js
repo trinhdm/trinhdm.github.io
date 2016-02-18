@@ -1,8 +1,3 @@
-// logic
-// have an array of images and a variable = # of thumbnails
-// switches out image when you click on thumbnail
-// this is unfinished
-
 // next: find next element and show when clicked left/right navigational buttons
 // http://stackoverflow.com/questions/16611694/jquery-find-next-image-after-the-clicked-instance
 // http://stackoverflow.com/questions/8724200/implementing-jquery-next-in-a-simple-image-slide-show
@@ -30,6 +25,7 @@ numThumb = 4;       // number of thumbnails showing
 
  $(document).ready(function() { // loads the code when document is ready
 
+
      // index = current value that you're on (where youre at in the array)
      // value = object (in this case, your images)
      // $.each is a loop that passes an array and a callback (a function). it iterates over the array
@@ -39,31 +35,6 @@ numThumb = 4;       // number of thumbnails showing
      $.each(images, function(index, value) {                                    // goes through the array
         $('#imageContain').append('<img src="' + value + '" />');               // inserts content with the value (images) in the #imageContain div
      });
-
-
-
-     // click on the thumbnails to change the thumbnail to the main image
-     /*$('#imageContain img').click(function() {                                   // if you click on an image within the div #imageContain
-         var newImg = $(this).attr('src');                                       // this = item that we just clicked -> set it to a variable
-         $.each(images, function(index, value) {                                 // passes array [images] and a function that takes your index in the array and the image you're at
-             if (value == newImg) {                                              // cycles through the array to find if where you clicked (newImg) matches the image (value)
-                 changeImage(index);                                             // switches image to the index # you're on
-             }                                                                   // == index and value are the same
-         });
-     });*/
-
-     function currentImage() {
-         imgIndex = $.inArray($('#slideshow').attr('src'), images);
-         return imgIndex;
-     }
-
-
-     // changes image to whatever the variable imgIndex passes to it
-     // passes the parameter of imgIndex that you get from currentImage()
-     function changeImage(imgIndex) {
-         var change = $('#slideshow').attr('src', images[imgIndex]);             // change = your location in the array
-         $('hold img').replaceWith(change);                                      // replace the image in the hold div with the image that you're currently at
-     }
 
 
      // for the first element of the array, add a margin left - for styling
@@ -136,7 +107,7 @@ numThumb = 4;       // number of thumbnails showing
 
                   $('#imageContain img').each(function(border) {                            // if you click an image in that div, pass the parameter 'border'
                       $('#imageContain img').not(border.target).removeClass('borderClass');   // if it isn't the element that triggered the event (if it isn't clicked), remove the border
-                      $(this).toggleClass('borderClass');
+                      $('#imageContain img:first').toggleClass('borderClass');
                   });
                 }
 
@@ -149,25 +120,50 @@ numThumb = 4;       // number of thumbnails showing
 
             }
 
-        }                                                                                // IMPORTANT: if you want to scroll 1 window at a time (change thumbanils to next set of images)
+        }    // end else statement for the right
+                                                                                        // IMPORTANT: if you want to scroll 1 window at a time (change thumbanils to next set of images)
     });                                                                                  // then change imgWidth to galleryWidth
 
 
-
-
-    // .target returns the element that triggers the event
-    // .not returns elements that don't match the criteria
-/*
-    $('#imageContain img').addClass('borderNormal');                            // add 1px solid #ddd border like the one on joebutton
-    $('#imageContain img:first').addClass('borderClass');                       // for the first element in the array, add a 1px solid #000 border like the one on joe button
-
-    // toggles border (1px solid #000) on click
-    $('#imageContain img').click(function (border) {                            // if you click an image in that div, pass the parameter 'border'
-        $('#imageContain img').not(border.target).removeClass('borderClass');   // if it isn't the element that triggered the event (if it isn't clicked), remove the border
-        $(this).toggleClass('borderClass');                                     // if it's the element that was clicked, change the border
+    // click on the thumbnails to change the thumbnail to the main image
+     $('#imageContain').each(function(){
+        $('#imageContain img').click(function() {                                   // if you click on an image within the div #imageContain
+            var newImg = $(this).attr('src');                                       // this = item that we just clicked -> set it to a variable
+            $.each(images, function(index, value) {                                 // passes array [images] and a function that takes your index in the array and the image you're at
+                if (value == newImg) {                                              // cycles through the array to find if where you clicked (newImg) matches the image (value)
+                  changeImage(index);                                             // switches image to the index # you're on
+                }                                                                   // == index and value are the same
+            });
+        });
     });
-    */
 
+
+     // .target returns the element that triggers the event
+     // .not returns elements that don't match the criteria
+
+     $('#imageContain img').addClass('borderNormal');                            // add 1px solid #ddd border like the one on joebutton
+     $('#imageContain img:first').addClass('borderClass');                       // for the first element in the array, add a 1px solid #000 border like the one on joe button
+
+     // toggles border (1px solid #000) on click
+     $('#imageContain img').click(function (border) {                            // if you click an image in that div, pass the parameter 'border'
+          $('#imageContain img').not(border.target).removeClass('borderClass');   // if it isn't the element that triggered the event (if it isn't clicked), remove the border
+          $(this).toggleClass('borderClass');                                     // if it's the element that was clicked, change the border
+     });
+
+
+
+     function currentImage() {
+          imgIndex = $.inArray($('#slideshow').attr('src'), images);
+          return imgIndex;
+      }
+
+
+         // changes image to whatever the variable imgIndex passes to it
+         // passes the parameter of imgIndex that you get from currentImage()
+     function changeImage(imgIndex) {
+        var change = $('#slideshow').attr('src', images[imgIndex]);             // change = your location in the array
+        $('hold img').replaceWith(change);                                      // replace the image in the hold div with the image that you're currently at
+     }
 
     // end
  });
