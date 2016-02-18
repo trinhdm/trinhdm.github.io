@@ -42,6 +42,30 @@ numThumb = 4;       // number of thumbnails showing
 
 
 
+     // click on the thumbnails to change the thumbnail to the main image
+     /*$('#imageContain img').click(function() {                                   // if you click on an image within the div #imageContain
+         var newImg = $(this).attr('src');                                       // this = item that we just clicked -> set it to a variable
+         $.each(images, function(index, value) {                                 // passes array [images] and a function that takes your index in the array and the image you're at
+             if (value == newImg) {                                              // cycles through the array to find if where you clicked (newImg) matches the image (value)
+                 changeImage(index);                                             // switches image to the index # you're on
+             }                                                                   // == index and value are the same
+         });
+     });*/
+
+     function currentImage() {
+         imgIndex = $.inArray($('#slideshow').attr('src'), images);
+         return imgIndex;
+     }
+
+
+     // changes image to whatever the variable imgIndex passes to it
+     // passes the parameter of imgIndex that you get from currentImage()
+     function changeImage(imgIndex) {
+         var change = $('#slideshow').attr('src', images[imgIndex]);             // change = your location in the array
+         $('hold img').replaceWith(change);                                      // replace the image in the hold div with the image that you're currently at
+     }
+
+
      // for the first element of the array, add a margin left - for styling
      $('#imageContain img:first').css('margin-left', '2px');
 
@@ -72,20 +96,57 @@ numThumb = 4;       // number of thumbnails showing
         var imgWidth = $('#imageContain img').width();                          // used to change image to next image
         var pos = $('#imageContain').position();                                // returns position of the div
         var positionLeft = pos.left;                                            // returns current left position as a string
-        if (whichArrow == 'goLeft'){                                            // if the left navigation arrow gets clicked
-            if (positionLeft == 0){                                             // if position = 0 do nothing
+
+
+        // moves thumbnail + image left - to the previous image
+        if (whichArrow == 'goLeft') {                                            // if the left navigation arrow gets clicked
+            if (positionLeft == 0) {                                             // if position = 0 do nothing
                 // do nothing
             } else {                                                            // if not 0, positionLeft will be a negative number
                 $('#imageContain').css('left', positionLeft + imgWidth);        // add the positionLeft to the width of image to set positionLeft back to 0
-                changeImage(imgIndex + 1);
-            }                                                                   // moves thumbnail left to the next image
+
+                currentImage();                                                 // returns current image index
+
+                if (imgIndex == 0) {                                            // if the index at the end, do nothing
+                } else {
+                    changeImage(imgIndex - 1);                                  // else if go to the previous image
+                  }
+
+                var newImg = $(imgIndex).attr('src');                           // set our index to a variable
+                $.each(images, function(index, value) {                         // passes array [images] and a function that takes your index in the array and the image you're at
+                        if (value == newImg) {                                  // cycles through the array to find if where you clicked (newImg) matches the image (value)
+                          changeImage(index);                                   // switches image to the index # you're on
+                        }                                                       // == index and value are the same
+                });
+            }
         }
-        else {                                                                           // else if the right navigation arrow gets clicked
-            if ($('#imageContain').width() <= imgWidth + Math.abs(positionLeft)){        // if width of the image is <= to (width of image + |positionLeft|) then donothing, we reached the end of our images
-                //do nothing;
+
+        // moves thumbnail + image right - to the next image
+        else if (whichArrow == 'goRight') {                                                                           // else if the right navigation arrow gets clicked
+            if ($('#imageContain').width() <= imgWidth + Math.abs(positionLeft)){        // if width of the image is <= to (width of image + |positionLeft|) then
+                //do nothing;                                                                // do nothing, we reached the end of our images
             } else {                                                                     // else if we haven't reached the end
                 $('#imageContain').css('left', positionLeft - imgWidth);                 // we take positionLeft - width of image to move the image to the next image
-                changeImage(imgIndex - 1);
+
+
+                currentImage();                                                          // returns current image index
+
+                if (imgIndex < images.length - 1) {                                      // if the index hasn't reached the end
+                  changeImage(imgIndex + 1);                                             // go forward an image
+
+                  $('#imageContain img').each(function(border) {                            // if you click an image in that div, pass the parameter 'border'
+                      $('#imageContain img').not(border.target).removeClass('borderClass');   // if it isn't the element that triggered the event (if it isn't clicked), remove the border
+                      $(this).toggleClass('borderClass');
+                  });
+                }
+
+                var newImg = $(imgIndex).attr('src');                                    // set our index to a variable
+                $.each(images, function(index, value) {                                  // passes array [images] and a function that takes your index in the array and the image you're at
+                        if (value == newImg) {                                           // cycles through the array to find if where you clicked (newImg) matches the image (value)
+                          changeImage(index);                                            // switches image to the index # you're on
+                        }                                                                // == index and value are the same
+                });
+
             }
 
         }                                                                                // IMPORTANT: if you want to scroll 1 window at a time (change thumbanils to next set of images)
@@ -96,7 +157,7 @@ numThumb = 4;       // number of thumbnails showing
 
     // .target returns the element that triggers the event
     // .not returns elements that don't match the criteria
-
+/*
     $('#imageContain img').addClass('borderNormal');                            // add 1px solid #ddd border like the one on joebutton
     $('#imageContain img:first').addClass('borderClass');                       // for the first element in the array, add a 1px solid #000 border like the one on joe button
 
@@ -105,26 +166,8 @@ numThumb = 4;       // number of thumbnails showing
         $('#imageContain img').not(border.target).removeClass('borderClass');   // if it isn't the element that triggered the event (if it isn't clicked), remove the border
         $(this).toggleClass('borderClass');                                     // if it's the element that was clicked, change the border
     });
+    */
 
-
-
-    // click on the thumbnails to change the thumbnail to the main image
-    $('#imageContain img').click(function() {                                   // if you click on an image within the div #imageContain
-        var newImg = $(this).attr('src');                                       // this = item that we just clicked -> set it to a variable
-        $.each(images, function(index, value) {                                 // passes array [images] and a function that takes your index in the array and the image you're at
-            if (value == newImg) {                                              // cycles through the array to find if where you clicked (newImg) matches the image (value)
-                changeImage(index);                                             // switches image to the index # you're on
-            }                                                                   // == index and value are the same
-        });
-    });
-
-
-    // changes image to whatever the variable imgIndex passes to it
-    // passes the parameter of imgIndex that you get from currentImage()
-    function changeImage(imgIndex) {
-        var change = $('#slideshow').attr('src', images[imgIndex]);             // change = your location in the array
-        $('hold img').replaceWith(change);                                      // replace the image in the hold div with the image that you're currently at
-    }
 
     // end
  });
