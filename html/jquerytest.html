@@ -1,11 +1,35 @@
-<link rel="stylesheet" type="text/css" href="jquerystyle.css">
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>jQuery Slider Test</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <!-- Include jQuery. -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+
+        <!-- Include Cloud Zoom CSS. -->
+        <link rel="stylesheet" type="text/css" href="cloudzoom.css" />
+
+        <!-- Include Cloud Zoom script. -->
+        <script type="text/javascript" src="cloudzoom.js"></script>
+        <script type="text/javascript" src="addto-cloudzoom.js"></script>
+
+        <!-- Call quick start function. -->
+        <script type="text/javascript">
+            CloudZoom.quickStart();
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="teststyle.css">
+    </head>
 
 <div class="header-content">
   <div class="contain">
   <div class="left">
 
 <div id="hold">
-<img src="http://d1ya1fm0bicxg1.cloudfront.net/2014/07/promoted-media-optimized_53da4ae651490.jpg" id="slideshow" />
+<img src="http://d1ya1fm0bicxg1.cloudfront.net/2014/07/promoted-media-optimized_53da4ae651490.jpg" id="slideshow"
+    class="cloudzoom" data-cloudzoom=""/>
 </div>
 <div id="thumbnails">
     <div class="thumbnailArrows"><img src="http://www.switchlearn.com/1images/leftArrowNavBlack.png" id="goLeft"/>
