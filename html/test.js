@@ -1,3 +1,8 @@
+// logic
+// have an array of images and a variable = # of thumbnails
+// switches out image when you click on thumbnail
+// this is unfinished
+
 // next: find next element and show when clicked left/right navigational buttons
 // http://stackoverflow.com/questions/16611694/jquery-find-next-image-after-the-clicked-instance
 // http://stackoverflow.com/questions/8724200/implementing-jquery-next-in-a-simple-image-slide-show
@@ -20,6 +25,23 @@ images = ['http://d1ya1fm0bicxg1.cloudfront.net/2014/07/promoted-media-optimized
 'http://41.media.tumblr.com/e4013c221c65a990c4b835c7bdfc5e09/tumblr_mztfz82XEE1rv17teo1_1280.png'];
 // array of images to draw from
 
+
+imagesZoom = ['http://d1ya1fm0bicxg1.cloudfront.net/2014/07/promoted-media-optimized_53da4ae651490.jpg',
+'http://www.edmsauce.com/wp-content/uploads/2014/09/Porter-Robinson-Worlds-Tour-Art.jpg',
+'http://41.media.tumblr.com/36749a04e9f4f7fcee29a476847bd81a/tumblr_nainsfU0641rrb7dfo1_500.jpg',
+'http://payload170.cargocollective.com/1/12/391611/5705300/10271482_711133358945257_7454391078460532252_n.jpg',
+'http://40.media.tumblr.com/b0763e17057768609ba85b34783926f6/tumblr_nmxve6TFgl1r4pdmzo1_500.jpg',
+'http://thissongissick.com/wp-content/uploads/2014/06/artworks-000082629676-lqw32k-t500x500.jpg',
+'http://cdn-ak.f.st-hatena.com/images/fotolife/m/marqs/20141223/20141223224740.jpg',
+'https://mir-s3-cdn-cf.behance.net/project_modules/disp/7a427018287469.562e3052a6268.jpg',
+'https://pbs.twimg.com/media/CODhN86UkAAcU1k.jpg',
+'http://40.media.tumblr.com/37a97b65972c36a7eeb9a42aa4d67d07/tumblr_nlmtf47EBT1t1bg5qo4_500.jpg',
+'https://49.media.tumblr.com/7c59d98496f853facd23bab0a20c2fe2/tumblr_nc062pnjxZ1s8qsdlo1_500.gif',
+'https://pbs.twimg.com/media/CQkZTELWgAAR1ap.png',
+'http://i1210.photobucket.com/albums/cc418/edmtunes/blog/blog002/madeonyoureon_zpsb29a5d5e.jpg~original',
+'https://s-media-cache-ak0.pinimg.com/736x/b7/14/76/b7147673cdba147cd0463fd21f06ff71.jpg',
+'http://41.media.tumblr.com/e4013c221c65a990c4b835c7bdfc5e09/tumblr_mztfz82XEE1rv17teo1_1280.png'];
+
 numThumb = 4;       // number of thumbnails showing
                     // used to dynamically calculate the margins between each image
 
@@ -35,6 +57,15 @@ numThumb = 4;       // number of thumbnails showing
      $.each(images, function(index, value) {                                    // goes through the array
         $('#imageContain').append('<img src="' + value + '" />');               // inserts content with the value (images) in the #imageContain div
      });
+
+     /*function changeZoom() {
+       var zoomChange = $('.zooming').data('cloudzoom');
+       $('.zooming').append(zoomChange);
+    }*/
+
+    console.log($('#slideshow'));
+     $('#slideshow').attr('data-cloudzoom', 'zoomPosition: \'inside\', zoomOffsetX: 0');
+     console.log($("#slideshow").attr("data-cloudzoom"));
 
 
      // for the first element of the array, add a margin left - for styling
@@ -54,6 +85,8 @@ numThumb = 4;       // number of thumbnails showing
      // width = length of array * (width of image + margin-right)
      // "+ #" is to remove overlap of thumbnails - depends if you have any methods that add width, ex borders that determines the #
      $('#imageContain').css('width', images.length * ($('#imageContain img').width() + parseInt($('#imageContain img').css('margin-right')) + 3));
+
+
 
 
 
@@ -104,11 +137,6 @@ numThumb = 4;       // number of thumbnails showing
 
                 if (imgIndex < images.length - 1) {                                      // if the index hasn't reached the end
                   changeImage(imgIndex + 1);                                             // go forward an image
-
-                  $('#imageContain img').each(function(border) {                            // if you click an image in that div, pass the parameter 'border'
-                      $('#imageContain img').not(border.target).removeClass('borderClass');   // if it isn't the element that triggered the event (if it isn't clicked), remove the border
-                      $('#imageContain img:first').toggleClass('borderClass');
-                  });
                 }
 
                 var newImg = $(imgIndex).attr('src');                                    // set our index to a variable
@@ -126,7 +154,7 @@ numThumb = 4;       // number of thumbnails showing
 
 
     // click on the thumbnails to change the thumbnail to the main image
-     $('#imageContain').each(function(){
+     $('#imageContain').each(function() {
         $('#imageContain img').click(function() {                                   // if you click on an image within the div #imageContain
             var newImg = $(this).attr('src');                                       // this = item that we just clicked -> set it to a variable
             $.each(images, function(index, value) {                                 // passes array [images] and a function that takes your index in the array and the image you're at
@@ -136,6 +164,15 @@ numThumb = 4;       // number of thumbnails showing
             });
         });
     });
+
+
+
+      $('#imageContain img').on('click', function(){
+        $(this).next().css({"color": "red", "border": "2px solid red"});
+      });
+
+      console.log($('#imageContain img'));
+
 
 
      // .target returns the element that triggers the event
@@ -150,13 +187,25 @@ numThumb = 4;       // number of thumbnails showing
           $(this).toggleClass('borderClass');                                     // if it's the element that was clicked, change the border
      });
 
+     function initiateImageZoomer() {
+       if (ShowImageZoomer) {
+    	    $('.cloudzoom').CloudZoom({
+	           useZoom: '.cloudzoom',
+	            zoomOffsetX: 0,
+	            zoomFlyOut: 0,
+	            zoomPosition:'inside',
+	            autoInside: 768,
+	            captionSource: 'none',
+	            zoomSizeMode: 'image',
+	        });
+      };
+    }
 
 
      function currentImage() {
           imgIndex = $.inArray($('#slideshow').attr('src'), images);
           return imgIndex;
       }
-
 
          // changes image to whatever the variable imgIndex passes to it
          // passes the parameter of imgIndex that you get from currentImage()
