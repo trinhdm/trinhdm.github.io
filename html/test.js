@@ -114,7 +114,7 @@ numThumb = 4;       // number of thumbnails showing
                 if (imgIndex == 0) {                                            // if the index at the end, do nothing
                 } else {
                     changeImage(imgIndex - 1);                                  // else if go to the previous image
-                  }
+                  } borderChange(imgIndex - 1);
 
                 var newImg = $(imgIndex).attr('src');                           // set our index to a variable
                 $.each(images, function(index, value) {                         // passes array [images] and a function that takes your index in the array and the image you're at
@@ -137,6 +137,7 @@ numThumb = 4;       // number of thumbnails showing
 
                 if (imgIndex < images.length - 1) {                                      // if the index hasn't reached the end
                   changeImage(imgIndex + 1);                                             // go forward an image
+                  borderChange(imgIndex + 1);
                 }
 
                 var newImg = $(imgIndex).attr('src');                                    // set our index to a variable
@@ -149,7 +150,7 @@ numThumb = 4;       // number of thumbnails showing
             }
 
         }    // end else statement for the right
-                                                                                        // IMPORTANT: if you want to scroll 1 window at a time (change thumbanils to next set of images)
+                                                                                        // IMPORTANT: if you want to scroll 1 window at a time (change thumbnails to next set of images)
     });                                                                                  // then change imgWidth to galleryWidth
 
 
@@ -166,13 +167,34 @@ numThumb = 4;       // number of thumbnails showing
     });
 
 
+    function borderChange(border) {
+      $('#imageContain img').nextAll().eq(0).css("border", "2px solid #f37736").animate({
+        'borderWidth': '2px',
+        'borderColor': '#f37736'
+        }, 200, function() {
+            $(this).animate({
+              'borderWidth':'2px',
+              'borderColor':'#f37736'
+            }, 200)
+        })
+    }
 
-      $('#imageContain img').on('click', function(){
+    /*
+      $('.thumbnails').on('click', '#imageContain img', function(){
         $(this).next().css({"color": "red", "border": "2px solid red"});
-      });
+      });*/
 
-      console.log($('#imageContain img'));
 
+      /*$('#thumbnails').find('.thumbnailArrows').on("click", function(){
+            $('#imageContain img').nextAll().eq(0).css({"color": "red", "border": "2px solid red"});
+          });
+
+
+     var el = document.getElementById("thumbnails");
+     el.addEventListener('click', function(){
+           $('#imageContain img').nextAll().eq(0).css({"color": "red", "border": "2px solid red"
+         });
+       });*/
 
 
      // .target returns the element that triggers the event
