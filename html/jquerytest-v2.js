@@ -18,6 +18,12 @@ var position = 0;
 
 var numThumb = 3;
 
+var preload = [];
+for (i = 0; i < images.length; i++) {
+    preload[i] = new Image();
+    preload[i].src = images[i];
+}
+
 // goes through the array, makes an image element for each index in the array
 // attaches attribute "src"
 // append prints out the image in the container of the gallery
