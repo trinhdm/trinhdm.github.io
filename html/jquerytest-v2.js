@@ -124,34 +124,33 @@ $('#rightArrow').click(function(){
 
     refreshImage();
     changeZoom();
-    goRight();
+    // goRight();
 });
 
-// $('.thumbnailArrows').click(function() {
-//         var whichArrow = $(this).children('img').attr('id');
-//         var imgWidth = $('#imageContain img').width();
-//         var pos = $('#imageContain').position();
-//         var posi = pos.left;
-//
-//         if (whichArrow == 'leftArrow'){
-//             if (posi == 0){
-//                 //do nothing
-//             } else {
-//                 $('#imageContain').animate({
-//                     left: posi+imgWidth,
-//                 });
-//             }
-//         }
-//         else {
-//             if ($('#imageContain').width() <= imgWidth+Math.abs(posi)){
-//                 //do nothing;
-//             } else {
-//                  $('#imageContain').animate({
-//                     left: posi-imgWidth,
-//                 });
-//             }
-//         }
-//     });
+$('.thumbnailArrows').click(function() {
+        var whichArrow = $(this).children('img').attr('id');
+        var imgWidth = $('#imageContain img').width();
+        var pos = $('#imageContain').position();
+        var posi = pos.left;
+
+        if (whichArrow == 'leftArrow'){
+            if (posi == 0){
+                //do nothing
+            } else {
+                $('#thumbGallery').animate({
+                    left: (posi + 2)}, 300);
+            }
+        }
+        else {
+            if ($('#imageContain').width() <= imgWidth+Math.abs(posi)){
+                //do nothing;
+            } else {
+                 $('#thumbGallery').stop().animate({
+                    left: posi + 1,                         duration:'fast',
+                                            easing:'easeInSine'});
+            }
+        }
+    });
 
 
 // when you click the left arrow, decrease the position of the index
@@ -172,7 +171,7 @@ $('#leftArrow') .click(function(){
 
     refreshImage();
     changeZoom();
-    goLeft();
+    // goLeft();
 });
 
 
@@ -224,11 +223,15 @@ function changeZoom() {
     myInstance.loadImage(images[position]);
 }
 
-function goLeft() {
-  $('#imageContain').animate({left:'-=15px'},'slow');
-}
-
-
-function goRight() {
-  $('#imageContain').animate({left:'+=15px'},'slow');
-}
+// function goLeft() {
+//   $('#thumbGallery').animate({left:'-=15px'},'slow');
+// }
+//
+//
+// function goRight() {
+//         var windowWid = $('#window').width();
+//         //get left position
+//         var pos = $('#imageHolder').position();
+//         var posi = pos.left;
+//   $('#thumbGallery').animate({left: posi-windowWid});
+// }
