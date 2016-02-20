@@ -24,50 +24,30 @@ for (i = 0; i < images.length; i++) {
     preload[i].src = images[i];
 }
 
-// goes through the array, makes an image element for each index in the array
-// attaches attribute "src"
-// append prints out the image in the container of the gallery
-
-/*
-this is to change the zoomed Image
-theory: replace 'loadImage' with the array
-var options = {zoomOffsetX:0, zoomPosition:'inside'};
-var myInstance = new CloudZoom($('#mainImage'),options);
-myInstance.loadImage('https://pbs.twimg.com/media/CODhN86UkAAcU1k.jpg');
-*/
-
-
 function getNextPosition(id, max) {
     var slot =  images.indexOf($(id).attr("src")) + 1;
-    // slot finds the position of the source in the images array and adds 1 to the index
 
     if (slot > max) {
-    // if slot is last slot in array, return max
-      return max;   // ex if max = images.length return the length
+      return max;
     }
 
-    return slot; // returns the next thumbnail
+    return slot;
 }
 
 
 function getPreviousPosition(id, min) {
-  // passes the parametes of id and min
 
     var slot =  images.indexOf($(id).attr("src")) - 1;
-    // slot finds the position of the source in the images array and subracts 1 to the index
 
     if (slot < min) {
-    // if slot less than the min then return the min (index 0)
-      return min;   // ex if min = 0 then return because that's the end
+      return min;
   }
 
-  return slot; // returns the next thumbnail
+  return slot;
 }
 
 
 function initializeSlider() {
-
-    // doesn't load all of the images at once (bad practice if you do)
 
 
     for (i = 0; i < images.length; i++) {
@@ -77,7 +57,6 @@ function initializeSlider() {
     }
 
 
-    // populates the thumbnail gallery
     for (i = 0; i < images.length; i++) {
         var thumb = document.createElement('img');
         $(thumb).attr('src', images[i])
@@ -85,7 +64,7 @@ function initializeSlider() {
         $('#imageContain').append(thumb);
     }
 
-    // applies CSS - borders
+  
     $('#imageContain img').css({
             'border-color': '#ddd',
             'border-width':'1px',
@@ -106,8 +85,6 @@ initializeSlider();
 
 
 
-// when you click the right arrow, increase the position of the index
-// if your position is too big, decrease it to fit the array.length
 $('#rightArrow').click(function(){
     position++;
 
@@ -117,19 +94,16 @@ $('#rightArrow').click(function(){
     }
 
 
-    // changes the thumbnails
+
     setThumb("#thumbnail0", getNextPosition("#thumbnail0", images.length - 3));
     setThumb("#thumbnail1", getNextPosition("#thumbnail1", images.length - 2));
     setThumb("#thumbnail2", getNextPosition("#thumbnail2", images.length - 1));
 
     refreshImage();
     changeZoom();
-    // goRight();
 });
 
 
-// when you click the left arrow, decrease the position of the index
-// if your position is too small (negative #), increase it (= 0, arrays start @ 0)
 $('#leftArrow') .click(function(){
     position--;
 
@@ -141,12 +115,9 @@ $('#leftArrow') .click(function(){
     setThumb("#thumbnail1", getPreviousPosition("#thumbnail1", 1));
     setThumb("#thumbnail2", getPreviousPosition("#thumbnail2", 2));
 
-    // will not work if there's less than 3 images
-    // you hard coded -1, -2
 
     refreshImage();
     changeZoom();
-    // goLeft();
 });
 
 
@@ -177,7 +148,6 @@ $('.thumbnailArrows').click(function() {
 
         if (whichArrow == 'leftArrow'){
             if (posi == 0){
-                //do nothing
             } else {
                 $('#thumbGallery').animate({
                     scrollLeft: '-=70' }, 1000);
@@ -185,7 +155,6 @@ $('.thumbnailArrows').click(function() {
         }
         else {
             if ($('#imageContain').width() <= imgWidth+Math.abs(posi)){
-                //do nothing;
             } else {
                  $('#thumbGallery').stop().animate({
                      scrollLeft: '+=20' }, 1000);
@@ -200,37 +169,20 @@ function refreshImage() {
 }
 
 
-// sets the thumbnail position
 function setThumb(thumbnailID, slot) {
-    // sets border to the image you're on
     if(slot == position) {
         $(thumbnailID).css({
           'border-color': '#000',
           'border-width':'1px',
           'border-style':'solid'});
         }
-
-    // whatever selector gets passes through, attach the source attribute that matches the position you're at
     $(thumbnailID).attr('src', images[slot]);
 }
 
 
-// changes the zoomed image
+
 function changeZoom() {
     var options = {zoomOffsetX:0, zoomPosition:'inside'};
     var myInstance = new CloudZoom($('#mainImage'),options);
     myInstance.loadImage(images[position]);
 }
-
-// function goLeft() {
-//   $('#thumbGallery').animate({left:'-=15px'},'slow');
-// }
-//
-//
-// function goRight() {
-//         var windowWid = $('#window').width();
-//         //get left position
-//         var pos = $('#imageHolder').position();
-//         var posi = pos.left;
-//   $('#thumbGallery').animate({left: posi-windowWid});
-// }
