@@ -31,29 +31,28 @@ myInstance.loadImage('https://pbs.twimg.com/media/CODhN86UkAAcU1k.jpg');
 */
 
 
-
-
 function getNextPosition(id, max) {
-  var slot =  images.indexOf($(id).attr("src")) + 1;
-  // slot finds the position of the source in the images array and adds 1 to the index
+    var slot =  images.indexOf($(id).attr("src")) + 1;
+    // slot finds the position of the source in the images array and adds 1 to the index
 
-  if (slot > max) {
+    if (slot > max) {
     // if slot is last slot in array, return max
-    return max;   // ex if max = images.length return the length
-  }
+      return max;   // ex if max = images.length return the length
+    }
 
-  return slot; // returns the next thumbnail
+    return slot; // returns the next thumbnail
 }
+
 
 function getPreviousPosition(id, min) {
   // passes the parametes of id and min
 
-  var slot =  images.indexOf($(id).attr("src")) - 1;
-  // slot finds the position of the source in the images array and adds 1 to the index
+    var slot =  images.indexOf($(id).attr("src")) - 1;
+    // slot finds the position of the source in the images array and subracts 1 to the index
 
-  if (slot < min) {
+    if (slot < min) {
     // if slot less than the min then return the min (index 0)
-    return min;   // ex if min = 0 then return because that's the end
+      return min;   // ex if min = 0 then return because that's the end
   }
 
   return slot; // returns the next thumbnail
@@ -61,35 +60,40 @@ function getPreviousPosition(id, min) {
 
 
 function initializeSlider() {
-    for (i = 0; i < 3; i++) {
-      var image = document.createElement("img");
-      $(image).attr("src", images[i]);
-      $('#mainImage').append(image);
-    }
 
+    // doesn't load all of the images at once (bad practice if you do)
 
-  // populates the thumbnail gallery
-  // doesn't load all of the images at once (bad practice if you do)
-  // loads # specified in numThumb and inserts that in #imageContain
 
     for (i = 0; i < numThumb; i++) {
-      var thumb = document.createElement('img');
-      $(thumb).attr('src', images[i])
-      $(thumb).attr('id',"thumbnail"+i);
-
-      $('#imageContain').append(thumb);
+        var image = document.createElement("img");
+        $(image).attr("src", images[i]);
+        $('#mainImage').append(image);
     }
 
-    $('#imageContain img').css({"border-color": "#ddd",
-             "border-width":"1px",
-             "border-style":"solid"});
-    $('#imageContain img:first').css({'margin-left': '10px', "border-color": "#000",
-             "border-width":"1px",
-             "border-style":"solid"});
+
+    // populates the thumbnail gallery
+    for (i = 0; i < numThumb; i++) {
+        var thumb = document.createElement('img');
+        $(thumb).attr('src', images[i])
+        $(thumb).attr('id',"thumbnail"+i);
+        $('#imageContain').append(thumb);
+    }
+
+    // applies CSS - borders
+    $('#imageContain img').css({
+            'border-color': '#ddd',
+            'border-width':'1px',
+            'border-style':'solid'
+           });
+    $('#imageContain img:first').css({
+            'margin-left': '10px',
+            'border-color': '#000',
+            'border-width':'1px',
+            'border-style':'solid'
+          });
+
     $('#imageContain img').css('margin-right', ($('#thumbGallery').width() - ($('#imageContain img').width()*numThumb))/numThumb);
     $('#imageContain').css('width', images.length * ($('#imageContain img').width() + parseInt($('#imageContain img').css('margin-right')) + 3));
-
-
 }
 
 initializeSlider();
@@ -99,24 +103,21 @@ initializeSlider();
 // when you click the right arrow, increase the position of the index
 // if your position is too big, decrease it to fit the array.length
 $('#rightArrow').click(function(){
-  position++;
+    position++;
 
-  if (position > images.length) {
-    position--;
-  }
-  //<img>
-  // src - position 0 'link'
+    if (position > images.length) {
+        position--;
+    }
 
 
-  setThumb("#thumbnail0", getNextPosition("#thumbnail0", images.length - 3));
-  setThumb("#thumbnail1", getNextPosition("#thumbnail1", images.length - 2));
-  setThumb("#thumbnail2", getNextPosition("#thumbnail2", images.length - 1));
+    // changes the thumbnails
+    setThumb("#thumbnail0", getNextPosition("#thumbnail0", images.length - 3));
+    setThumb("#thumbnail1", getNextPosition("#thumbnail1", images.length - 2));
+    setThumb("#thumbnail2", getNextPosition("#thumbnail2", images.length - 1));
 
 
-  refreshImage();
-  changeZoom();
-
-
+    refreshImage();
+    changeZoom();
 });
 
 
@@ -124,64 +125,66 @@ $('#rightArrow').click(function(){
 // when you click the left arrow, decrease the position of the index
 // if your position is too small (negative #), increase it (= 0, arrays start @ 0)
 $('#leftArrow') .click(function(){
-  position--;
+    position--;
 
-  if (position < 0) {
-    position += 1;
-  }
+    if (position < 0) {
+      position++;
+    }
 
-  setThumb("#thumbnail0", getPreviousPosition("#thumbnail0", 0));
-  setThumb("#thumbnail1", getPreviousPosition("#thumbnail1", 1));
-  setThumb("#thumbnail2", getPreviousPosition("#thumbnail2", 2));
+    setThumb("#thumbnail0", getPreviousPosition("#thumbnail0", 0));
+    setThumb("#thumbnail1", getPreviousPosition("#thumbnail1", 1));
+    setThumb("#thumbnail2", getPreviousPosition("#thumbnail2", 2));
 
-  // will not work if there's less than 3 images
-  // you hard coded -1, -2
+    // will not work if there's less than 3 images
+    // you hard coded -1, -2
 
 
-  refreshImage();
-  changeZoom();
+    refreshImage();
 });
 
 
-
-
-
 $('#imageContain img').click(function(border){
+    position = images.indexOf(this.src);
+    refreshImage();
 
-  position = images.indexOf(this.src);
+    $('#imageContain img').not(border.target).css({
+        'border-color': '#ddd',
+        'border-width':'1px',
+        'border-style':'solid'
+      });
 
-
-   $('#imageContain img').not(border.target).css({"border-color": "#ddd",
-            "border-width":"1px",
-            "border-style":"solid"});
-
-   $(this).css({"border-color": "#000",
-            "border-width":"1px",
-            "border-style":"solid"});
-
-            refreshImage();
-            changeZoom();
+    $(this).css({
+        'border-color': '#000',
+        'border-width':'1px',
+        'border-style':'solid'
+      });
 });
 
 
 
 function refreshImage() {
-  $('#mainImage').attr('src', images[position]);
+    $('#mainImage').attr('src', images[position]);
 }
 
+
+// sets the thumbnail position
 function setThumb(thumbnailID, slot) {
-  if(slot == position - 1) {
-    $(thumbnailID).css({"border-color": "#000",
-             "border-width":"1px",
-             "border-style":"solid"});
-          }
+    // sets border to the image you're on
+    if(slot == position) {
+        $(thumbnailID).css({
+          'border-color': '#000',
+          'border-width':'1px',
+          'border-style':'solid'});
+        }
 
-  $(thumbnailID).attr('src', images[slot]);
+    // whatever selector gets passes through, attach the source attribute that matches the position you're at
+    $(thumbnailID).attr('src', images[slot]);
 }
 
+
+// changes the zoomed image
 function changeZoom() {
-  var zoomImage = $('#mainImage').attr('src', images[position]);
-  var options = {zoomOffsetX:0, zoomPosition:'inside'};
-  var myInstance = new CloudZoom($('#mainImage'),options);
-  myInstance.loadImage($(zoomImage));
+    var zooming = $('#mainImage').attr('src', images[position]);
+    var options = {zoomOffsetX:0, zoomPosition:'inside', zoomImage: zooming};
+    var myInstance = new CloudZoom($('#mainImage'),options);
 }
