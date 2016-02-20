@@ -140,12 +140,15 @@ $('#leftArrow') .click(function(){
 
 
     refreshImage();
+    changeZoom();
 });
 
 
 $('#imageContain img').click(function(border){
     position = images.indexOf(this.src);
+
     refreshImage();
+    changeZoom();
 
     $('#imageContain img').not(border.target).css({
         'border-color': '#ddd',
@@ -184,7 +187,7 @@ function setThumb(thumbnailID, slot) {
 
 // changes the zoomed image
 function changeZoom() {
-    var zooming = $('#mainImage').attr('src', images[position]);
-    var options = {zoomOffsetX:0, zoomPosition:'inside', zoomImage: zooming};
+    var options = {zoomOffsetX:0, zoomPosition:'inside'};
     var myInstance = new CloudZoom($('#mainImage'),options);
+    myInstance.loadImage(images[position]);
 }
