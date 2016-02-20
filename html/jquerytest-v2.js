@@ -111,6 +111,7 @@ initializeSlider();
 $('#rightArrow').click(function(){
     position++;
 
+
     if (position > images.length) {
         position--;
     }
@@ -121,11 +122,36 @@ $('#rightArrow').click(function(){
     setThumb("#thumbnail1", getNextPosition("#thumbnail1", images.length - 2));
     setThumb("#thumbnail2", getNextPosition("#thumbnail2", images.length - 1));
 
-
     refreshImage();
     changeZoom();
+    goRight();
 });
 
+// $('.thumbnailArrows').click(function() {
+//         var whichArrow = $(this).children('img').attr('id');
+//         var imgWidth = $('#imageContain img').width();
+//         var pos = $('#imageContain').position();
+//         var posi = pos.left;
+//
+//         if (whichArrow == 'leftArrow'){
+//             if (posi == 0){
+//                 //do nothing
+//             } else {
+//                 $('#imageContain').animate({
+//                     left: posi+imgWidth,
+//                 });
+//             }
+//         }
+//         else {
+//             if ($('#imageContain').width() <= imgWidth+Math.abs(posi)){
+//                 //do nothing;
+//             } else {
+//                  $('#imageContain').animate({
+//                     left: posi-imgWidth,
+//                 });
+//             }
+//         }
+//     });
 
 
 // when you click the left arrow, decrease the position of the index
@@ -144,9 +170,9 @@ $('#leftArrow') .click(function(){
     // will not work if there's less than 3 images
     // you hard coded -1, -2
 
-
     refreshImage();
     changeZoom();
+    goLeft();
 });
 
 
@@ -196,4 +222,13 @@ function changeZoom() {
     var options = {zoomOffsetX:0, zoomPosition:'inside'};
     var myInstance = new CloudZoom($('#mainImage'),options);
     myInstance.loadImage(images[position]);
+}
+
+function goLeft() {
+  $('#imageContain').animate({left:'-=15px'},'slow');
+}
+
+
+function goRight() {
+  $('#imageContain').animate({left:'+=15px'},'slow');
 }
