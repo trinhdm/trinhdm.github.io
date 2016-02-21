@@ -70,7 +70,7 @@ function initializeSlider() {
     // doesn't load all of the images at once (bad practice if you do)
 
 
-    for (i = 0; i < numThumb; i++) {
+    for (i = 0; i < images.length; i++) {
         var image = document.createElement("img");
         $(image).attr("src", images[i]);
         $('#mainImage').append(image);
@@ -78,7 +78,7 @@ function initializeSlider() {
 
 
     // populates the thumbnail gallery
-    for (i = 0; i < numThumb; i++) {
+    for (i = 0; i < images.length; i++) {
         var thumb = document.createElement('img');
         $(thumb).attr('src', images[i])
         $(thumb).attr('id',"thumbnail"+i);
@@ -127,31 +127,6 @@ $('#rightArrow').click(function(){
     // goRight();
 });
 
-$('.thumbnailArrows').click(function() {
-        var whichArrow = $(this).children('img').attr('id');
-        var imgWidth = $('#imageContain img').width();
-        var pos = $('#imageContain').position();
-        var posi = pos.left;
-
-        if (whichArrow == 'leftArrow'){
-            if (posi == 0){
-                //do nothing
-            } else {
-                $('#thumbGallery').animate({
-                    left: (posi + 2)}, 300);
-            }
-        }
-        else {
-            if ($('#imageContain').width() <= imgWidth+Math.abs(posi)){
-                //do nothing;
-            } else {
-                 $('#thumbGallery').stop().animate({
-                    left: posi + 1,                         duration:'fast',
-                                            easing:'easeInSine'});
-            }
-        }
-    });
-
 
 // when you click the left arrow, decrease the position of the index
 // if your position is too small (negative #), increase it (= 0, arrays start @ 0)
@@ -193,6 +168,30 @@ $('#imageContain img').click(function(border){
         'border-style':'solid'
       });
 });
+
+// $('.thumbnailArrows').click(function() {
+//         var whichArrow = $(this).children('img').attr('id');
+//         var imgWidth = $('#imageContain img').width();
+//         var pos = $('#imageContain').position();
+//         var posi = pos.left;
+//
+//         if (whichArrow == 'leftArrow'){
+//             if (posi == 0){
+//                 //do nothing
+//             } else {
+//                 $('#thumbGallery').animate({
+//                     scrollLeft: '-=70' }, 1000);
+//             }
+//         }
+//         else {
+//             if ($('#imageContain').width() <= imgWidth+Math.abs(posi)){
+//                 //do nothing;
+//             } else {
+//                  $('#thumbGallery').stop().animate({
+//                      scrollLeft: '+=20' }, 1000);
+//             }
+//         }
+//     });
 
 
 
