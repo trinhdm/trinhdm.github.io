@@ -11,13 +11,13 @@ h1 {
 
 
 #mainImage {
-  max-height: 350px;
-  max-width: 350px;
+  max-height: 500px;
+  max-width: 500px;
 }
 
 #hold {
-  height: 350px;
-  width: 350px;
+  height: 500px;
+  width: 500px;
   position:relative;
   z-index:1;
   text-align:center; /* centers image */
@@ -25,14 +25,14 @@ h1 {
 }
 
 #thumbnails { /* thumbnails width = thumbGallery width + (thumbnailArrows width)*2 */
-  width: 360px;
-  height: 70px;
+  width: 500px;
+  height: 100px;
   margin-top:20px;
 }
 
 #thumbGallery {
-  width: 310px;
-  height: 80px;
+  width: 440px;
+  height: 120px;
   overflow: hidden;
   float: left;
   position: relative;
@@ -40,16 +40,20 @@ h1 {
 }
 
 #imageContain { /* width is dynamically set by js */
-  height: 70px;
+  height: 110px;
   position: absolute;
   top:0px;
   left:0px;
 }
 
 #imageContain img {
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   float: left;
+}
+
+#imageContain img:first-child {
+  margin-left: 25px;
 }
 
 #thumbnails .thumbnailArrows {
@@ -88,13 +92,13 @@ h1 {
 
 .header-content .contain {
     margin: 0 auto;
-    width: 900px;
+    width: 1200px;
     display: flex;
 }
 
 .header-content .contain .left {
   width: 40%;
-  margin-right: 30px;
+  margin-right: 50px;
   overflow: hidden;
 }
 
