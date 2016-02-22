@@ -86,17 +86,14 @@ function initializeSlider() {
     }
 
     // applies CSS - borders
-    $('#imageContain img').css({
-            'border-color': '#ddd',
-            'border-width':'1px',
-            'border-style':'solid'
-           });
-    $('#imageContain img:first').css({
-            'margin-left': '10px',
-            'border-color': '#000',
-            'border-width':'1px',
-            'border-style':'solid'
-          });
+    // $('#imageContain img').css({
+    //         'border-color': '#ddd',
+    //         'border-width':'1px',
+    //         'border-style':'solid'
+    //        });
+    // $('#imageContain img:first').css({
+    //         'margin-left': '10px',
+    //       });
 
     $('#imageContain img').css('margin-right', ($('#thumbGallery').width() - ($('#imageContain img').width()*numThumb))/numThumb);
     $('#imageContain').css('width', images.length * ($('#imageContain img').width() + parseInt($('#imageContain img').css('margin-right')) + 3));
@@ -156,17 +153,17 @@ $('#imageContain img').click(function(border){
     refreshImage();
     changeZoom();
 
-    $('#imageContain img').not(border.target).css({
-        'border-color': '#ddd',
-        'border-width':'1px',
-        'border-style':'solid'
-      });
-
-    $(this).css({
-        'border-color': '#000',
-        'border-width':'1px',
-        'border-style':'solid'
-      });
+    // $('#imageContain img').not(border.target).css({
+    //     'border-color': '#ddd',
+    //     'border-width':'1px',
+    //     'border-style':'solid'
+    //   });
+    //
+    // $(this).css({
+    //     'border-color': '#000',
+    //     'border-width':'1px',
+    //     'border-style':'solid'
+    //   });
 });
 
 // $('.thumbnailArrows').click(function() {
@@ -203,12 +200,12 @@ function refreshImage() {
 // sets the thumbnail position
 function setThumb(thumbnailID, slot) {
     // sets border to the image you're on
-    if(slot == position) {
-        $(thumbnailID).css({
-          'border-color': '#000',
-          'border-width':'1px',
-          'border-style':'solid'});
-        }
+    // if(slot == position) {
+    //     $(thumbnailID).css({
+    //       'border-color': '#000',
+    //       'border-width':'1px',
+    //       'border-style':'solid'});
+    //     }
 
     // whatever selector gets passes through, attach the source attribute that matches the position you're at
     $(thumbnailID).attr('src', images[slot]);
