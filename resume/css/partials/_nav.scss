@@ -55,7 +55,7 @@ ul.nav li {
       &:before {
         color: $mainColor;
         width: 100%;
-        background: #c65b59;
+        background: $secondColor;
         text-decoration: none;
 
         @include phone-and-tablet {
@@ -66,7 +66,7 @@ ul.nav li {
       }
 
       &:after {
-        color: #c65b59;
+        color: $secondColor;
         width: 100%;
         background: transparent;
         @include transition(all 0s ease);
@@ -99,7 +99,7 @@ ul.nav li {
       @include navAnimate;
       @include transition(width .5s ease);
       right: 0;
-      background: #c65b59;
+      background: $secondColor;
       color: $mainColor;
 
       @include phone-and-tablet {

@@ -5,6 +5,10 @@
   width: 100%;
   padding: 90px 90px 150px 90px;
 
+  @include phone-and-tablet {
+    padding-left: 20px;
+  }
+
 
   h1 {
     font: 400 50px $fontFam;
