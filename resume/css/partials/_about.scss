@@ -5,6 +5,10 @@
     width: 54%;
     height: 100vh;
 
+    @include phone-and-tablet {
+      padding-left: 20px;
+    }
+
     h1 {
       font: 400 50px $fontFam;
       letter-spacing: 1px;

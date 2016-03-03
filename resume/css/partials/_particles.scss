@@ -14,11 +14,7 @@
   }
 }
 
-@include phone {
-  #particles-js {
-    height: 175vh;
-  }
-}
+
 
 @media(min-width:1024px) and (max-width:1200px) {
   #particles-js {
