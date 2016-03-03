@@ -1,0 +1,27 @@
+#particles-js{
+  width: 100%;
+  height: 100vh;
+  background-color: #ccc;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+@include tablet {
+  #particles-js {
+    height: 135vh;
+  }
+}
+
+@include phone {
+  #particles-js {
+    height: 175vh;
+  }
+}
+
+@media(min-width:1024px) and (max-width:1200px) {
+  #particles-js {
+    height: 115vh;
+  }
+}

@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+
+$fontFam: Lato;
+
+$mainColor: #D66360;
+$secondColor: #c65b59;
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin faIcon {
+  color:$mainColor;
+  margin-top: 20px;
+  padding-right: 15px;
+  float: left;
+}
+
+
+@mixin navAnimate {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  text-decoration: none;
+}
+
+
+/* responsive */
+
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin phone-and-tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-and-under {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}

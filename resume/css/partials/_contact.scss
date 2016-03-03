@@ -1,0 +1,57 @@
+
+.contact {
+  background-color: #efefef;
+  color: #777;
+  width: 100%;
+  padding: 90px 90px 150px 90px;
+
+
+  h1 {
+    font: 400 50px $fontFam;
+    letter-spacing: 1px;
+    color: #888;
+  }
+
+  h2 {
+    font-style: italic;
+    font-size: 18.5px;
+    font-weight: 100;
+    color: #aaa;
+    line-height: 1.4;
+  }
+
+  .col-md-12 {
+    padding-bottom: 175px;
+  }
+
+  .col-sm-6.col-xs-12 {
+    padding-bottom: 25px;
+  }
+
+  .fa-row {
+    line-height: 34px;
+
+    /* font awesome in contact page */
+    .fa-icon {
+      @include faIcon;
+    }
+
+    .fa-footer {
+      padding-right: 35px !important;
+      color: $mainColor;
+      float: left;
+      font-size: 2.5em;
+      vertical-align: middle;
+    }
+
+    .fa-footer:last-child {
+      padding-right: 0px;
+    }
+  }
+
+  @include desktop-and-under {
+    .row .col-md-3 > .pull-right {
+        float: none !important;
+    }
+  }
+}
