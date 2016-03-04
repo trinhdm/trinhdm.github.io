@@ -62,10 +62,10 @@
         <div class="row">
           <div class="col-md-12">
         <h1>Hi,</h1>
-          <p>I'm Doreen Trinh and my background lies in International Studies with a specialization in economics from UC Irvine. Outside of my education at UCI, I have also studied at East China Normal University (华师大) in Shanghai.
+          <p>My name is Doreen Trinh and my background lies in International Studies with a specialization in economics from University of California, Irvine. Outside of my education at UCI, I have also studied at East China Normal University (华师大) in Shanghai.
           </p>
-          <p>As the global economy continues to expand, the need to connect businesses to clients rises to a multinational scale.
-             As a front-end developer and a specialist who understands the diversity of the worldwide economy, I bridge the gap between businesses and clients on an international scale by helping them communicate digitally.
+          <p>As the global economy continues to expand, the need to connect businesses to clients rises on a multinational scale.
+             As a front-end developer and a specialist who understands the diversity of the worldwide economy, I bridge the gap between businesses and clients on an international scale by helping them communicate digitally through code.
           </p>
           <p>When I'm not coding the day away, you could normally find me hiking in the woods, discovering new eateries in the city or trying out 3 coffee shops a day.
           </p>
@@ -128,29 +128,9 @@
     <h1>Portfolio</h1>
 
 <div class="row">
-  <div class="col-md-4 col-xs-12">
-     <a href="http://google.com">
-        <img src="http://41.media.tumblr.com/36749a04e9f4f7fcee29a476847bd81a/tumblr_nainsfU0641rrb7dfo1_500.jpg" class="img-responsive thumbnail">
-
-     <div class="floatBox">
-       <div class="content">
-           <h3>open website</h3>
-       </div>
-       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-         <rect class="shape" x="0" y="0" width="100%" height="100%" />
-       </svg>
-     </a>
-     </div>
-
-     <div class="description">
-     <h3>Chinese Association @ UCI</h3>
-     <span>Wordpress theme</span>
-     </div>
-  </div>
-
 
    <div class="col-md-4 col-xs-12">
-     	<a href="http://google.com">
+     	<a href="www.foregroundstudios.net/demo-home/">
          <img src="https://s-media-cache-ak0.pinimg.com/564x/b0/cd/4e/b0cd4ec7700a05ac6003201fba64a3f4.jpg" class="img-responsive thumbnail">
 
       <div class="floatBox">
@@ -172,7 +152,7 @@
 
 
    <div class="col-md-4 col-xs-12">
-     	<a href="http://facebook.com">
+     	<a href="http://104.239.145.197/standing-desk-tables/edison-electric-table-vtb107.html">
          <img src="http://s.freshnewtracks.com/wp-content/uploads/2014/06/artworks-000082629676-lqw32k-t500x500.jpg" class="img-responsive thumbnail">
 
       <div class="floatBox">
@@ -191,6 +171,25 @@
       </div>
    </div>
 
+   <div class="col-md-4 col-xs-12">
+      <a href="http://www.studentcenter.uci.edu/antmedia/">
+         <img src="http://41.media.tumblr.com/36749a04e9f4f7fcee29a476847bd81a/tumblr_nainsfU0641rrb7dfo1_500.jpg" class="img-responsive thumbnail">
+
+      <div class="floatBox">
+        <div class="content">
+            <h3>open website</h3>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <rect class="shape" x="0" y="0" width="100%" height="100%" />
+        </svg>
+      </a>
+      </div>
+
+      <div class="description">
+      <h3>AntMedia at SCES, UCI</h3>
+      <span>Page Layout</span>
+      </div>
+   </div>
 </div>
 </div>
 </div></div>
@@ -201,12 +200,12 @@
 
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
       <h1>Let's chat!</h1>
 
 <h2>
-      <p>Have a cool project in mind, and think I could help you with it?</p>
-      <p>Feel free to email me at <a href="mailto:doreenmtrinh@gmail.com">doreenmtrinh@gmail.com</a>.
+      <p>Have a cool project in mind and think I could help you with it?</p>
+      <p>Feel free to email me at <a href="mailto:&#100;&#111;&#114;&#101;&#101;&#110;&#109;&#116;&#114;&#105;&#110;&#104;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#100;&#111;&#114;&#101;&#101;&#110;&#109;&#116;&#114;&#105;&#110;&#104;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>.
       </p>
       <p>Or view my resume <a href="docs/resume.pdf">here</a>.</p>
       </h2>
@@ -244,66 +243,7 @@
 <!-- scripts -->
 <script src="js/particles.js"></script>
 <script src="js/particles-app.js"></script>
-
-<script>
-
-
-$("ul.nav li a:first").addClass('youarehere');
-
-// changes nav link on scroll
-  var sections = $('section');
-  var nav = $('nav');
-  var nav_height = nav.outerHeight();
-
-  $(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop();
-
-
-
-    sections.each(function() {
-
-      var top = $(this).offset().top - nav_height,
-          bottom = top + $(this).outerHeight();
-
-      if (cur_pos >= top && cur_pos <= bottom) {
-        nav.find('ul.nav li a').removeClass('youarehere');
-        sections.removeClass('youarehere');
-
-        nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('youarehere');
-      }
-    });
-  });
-
-
-  nav.find('ul.nav li a').on('click', function () {
-    var $el = $(this)
-      , id = $el.attr('href');
-
-    $('html, body').animate({
-      scrollTop: $(id).offset().top - nav_height
-    }, 500);
-
-    return false;
-  });
-
-
-  $('.about').addClass('animated fadeIn animateTiming');
-  $('.portfolio .row').addClass('notVisible');
-  $('.contact .row').addClass('notVisible');
-
-$(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 150 && scroll <= 200) {
-        $(".portfolio .row").addClass("animated fadeIn animateTiming");
-    }
-
-    else if (scroll >= 201) { /* FIX fade in for contacts */
-      $(".portfolio .row").addClass("animated fadeIn animateTiming");
-      $(".contact .row").addClass("animated fadeIn animateTiming2");
-    }
-}); //missing );
-</script>
+<script src="js/everything.js"></script>
 
 
 </body>
