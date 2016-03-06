@@ -3,6 +3,7 @@
   color: #fff;
   width: 100%;
   padding: 90px 90px 300px 90px;
+  overflow-x: hidden;
 
 
   a {
@@ -19,6 +20,12 @@
     color: #ddd;
     font-family: $fontFam;
     font-size: 15px;
+  }
+
+  @include phone-and-tablet {
+    .row {
+      width: 99.5%;
+    }
   }
 
   .post {
@@ -97,6 +104,7 @@
       .shape {
         stroke-dasharray: 0 1300;
         stroke-dashoffset: 400;
+        transition: stroke-width 1s, stroke-dashoffset 1.5s, stroke-dasharray 1.5s;
       }
     }
 

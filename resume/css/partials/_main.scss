@@ -24,9 +24,12 @@ html, body {
   line-height: 1.375;
 }
 
+// * {
+//     outline: 1px solid red;
+// }
+
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  overflow-x: hidden;
 }
 
 canvas {
