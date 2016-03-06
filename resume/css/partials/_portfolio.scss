@@ -5,6 +5,10 @@
   padding: 90px 90px 300px 90px;
   overflow-x: hidden;
 
+  @include phone-and-tablet {
+    padding-left: 20px;
+  }
+
 
   a {
     border-bottom: 0px solid rgba(0,0,0,0);
