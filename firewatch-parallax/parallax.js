@@ -8,7 +8,9 @@ function preload() {
   }
 }
 preload(
-  'http://i.imgur.com/the8cBL.png',
+  'http://i.imgur.com/1ni9mvP.png',
+  'http://i.imgur.com/Kz7yeyC.png',
+  'http://i.imgur.com/yUajLAf.png',
   'http://i.imgur.com/lp9649i.png',
   'http://i.imgur.com/Oc9yQRj.png',
   'http://i.imgur.com/vecF1g4.png'
