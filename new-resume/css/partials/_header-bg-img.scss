@@ -7,6 +7,10 @@
 		width: 50%;
 		-webkit-transform: translateX(-33.3%) translateY(-50%);
 		transform: translateX(-33.3%) translateY(-50%);
+
+		@include phone {
+			width: 70%;
+		}
 	}
 
 	.header {
@@ -47,6 +51,12 @@
 	.title {
 		-webkit-transform: translateY(-50%);
 		transform: translateY(-50%);
+
+		@include phone {
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			width: 70%;
+		}
 	}
 
 	.header {

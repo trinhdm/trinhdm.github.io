@@ -63,6 +63,7 @@
   font: .9em 'Roboto Slab', Georgia, serif;
   font-style: italic;
   text-transform: lowercase;
+	cursor: pointer;
 }
 
 .grid figcaption a:hover {
@@ -72,7 +73,7 @@
 
 .grid figcaption a::after {
   padding-left: 5px;
-  content: 'see more \f105';
+  content: '\f105';
   font-family: 'FontAwesome';
 }
 

@@ -2,6 +2,22 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
 
+/* FONT / COLORS
+============================================= */
+
+$firstColor: #43939d;
+$secondColor: #7b8d92;
+$thirdColor: #A8C9CD;
+
+
+$titleFont: 'Roboto Slab', Georgia, serif;
+$secondFont: 'Raleway', Arial, sans-serif;
+
+
+
+/* REGULAR MIXINS
+============================================= */
+
 @mixin fa-li {
   font-family: 'FontAwesome';
   float: left;
@@ -17,10 +33,34 @@
 }
 
 
-$firstColor: #43939d;
-$secondColor: #7b8d92;
-$thirdColor: #A8C9CD;
 
+/* MIXINS FOR RESPONSIVENESS
+============================================= */
 
-$titleFont: 'Roboto Slab', Georgia, serif;
-$secondFont: 'Raleway', Arial, sans-serif;
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop-and-under {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}

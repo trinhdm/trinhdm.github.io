@@ -97,4 +97,27 @@
       @include transition(all .5s ease);
     }
   }
+
+	.next {
+		margin-top: 70px;
+		height: 20px;
+		display: inline-block;
+
+		@include tablet {
+			display: none;
+		}
+
+		@include phone {
+			display: none;
+		}
+
+		p {
+			line-height: 20px;
+		}
+
+		i {
+			vertical-align: middle;
+			padding-right: .5em;
+		}
+	}
 }

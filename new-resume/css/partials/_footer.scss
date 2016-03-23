@@ -3,4 +3,14 @@
   color: $secondColor;
   padding: 10px 0 10px 190px;
   font: 10pt $titleFont;
+
+  @include phone {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  @include tablet {
+    padding: 10px 0;
+    text-align: center;
+  }
 }
