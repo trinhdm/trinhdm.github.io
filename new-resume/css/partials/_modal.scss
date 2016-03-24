@@ -1,5 +1,5 @@
 .md-perspective body  {
-	background: #222;
+	background: #fff;
 	-webkit-perspective: 600px;
 	-moz-perspective: 600px;
 	perspective: 600px;
@@ -10,7 +10,8 @@
 	top: 50%;
 	left: 50%;
 	width: 100%;
-	height: auto;
+	overflow-y:auto;
+  max-height: 99%;
 	z-index: 2000;
 	visibility: hidden;
 	-webkit-backface-visibility: hidden;
@@ -46,10 +47,11 @@
 	visibility: visible;
 }
 
+
 /* Content styles */
 .md-content {
-	color: $secondColor;
-	background: #efefef !important;
+	color: $titleColor;
+	background: #fff !important;
 	position: relative;
 	border-radius: 3px;
 	margin: 0 auto;
@@ -63,21 +65,47 @@
   transition: all 0.3s;
 
   h3 {
-    font: 700 1em $titleFont;
-    color: $secondColor;
+    font: 1.9em $titleFont;
+    color: $fourthColor;
   	margin: 0;
   	padding: 0.4em;
   	text-align: center;
-  	font-size: 2.4em;
   	opacity: 0.8;
   	background: transparent;
   	border-radius: 3px 3px 0 0;
   }
 
   h4 {
-    font: 700 1.1em $titleFont;
-    color: $secondColor;
+    font: 1.1em $titleFont;
+    color: $fourthColor;
   }
+
+
+	p {
+	  margin: 0;
+	  font: 400 .9em $secondFont;
+
+		&:first-child {
+			text-align: right;
+			float: right;
+			padding-bottom: 10px;
+			padding-right: 90px;
+
+			@include phone {
+				padding-right: 0;
+				margin: 0 auto;
+			}
+
+			a {
+				padding-right: 2.5em;
+			}
+		}
+	}
+
+	.fa-modal {
+		padding-right: .5em !important;
+		font-size: 1.5em;
+	}
 
   .main {
     padding:15px 50px 30px;
@@ -85,11 +113,6 @@
 
   > div {
   	margin: 0 auto;
-
-    p {
-    	margin: 0;
-      font: 400 .9em $secondFont;
-    }
 
     ul {
     	margin: 0;
@@ -102,18 +125,25 @@
   }
 
   button {
+		color: #fff;
+		font: .8em $titleFont;
+		background: $mainColor;
+		letter-spacing: 1px;
+		text-transform: uppercase;
   	display: block;
   	margin: 0 auto;
-  	font-size: 0.8em;
     border: none;
     padding: 0.6em 1.2em;
-    background: $secondColor;
-    color: #fff;
-    font-family: $secondFont;
-    font-size: 1em;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     cursor: pointer;
+
+		.fa {
+			color: $white !important;
+		}
+
+		&:hover {
+			background-color: $fourthColor;
+			@include transition(all .5s ease);
+		}
   }
 }
 

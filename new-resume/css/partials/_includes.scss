@@ -1,13 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800|Lora:400italic|Playfair+Display:700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,800);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 
 
 /* FONT / COLORS
 ============================================= */
 
-$firstColor: #43939d;
-$secondColor: #7b8d92;
-$thirdColor: #A8C9CD;
+$titleColor: #516165;       // dark steel blue
+$mainColor: #7b8d92;        // light steel blue
+$secondColor: #43939d;      // teal
+$thirdColor: #A8C9CD;       // light blue
+$fourthColor: #69606b;       // purpleish black-brown
+
+$white: #efefef;
 
 
 $titleFont: 'Roboto Slab', Georgia, serif;
@@ -21,7 +25,8 @@ $secondFont: 'Raleway', Arial, sans-serif;
 @mixin fa-li {
   font-family: 'FontAwesome';
   float: left;
-  margin-left: -1.5em;
+  color: $thirdColor;
+  padding-right: 0em;
 }
 
 @mixin transition($args...) {

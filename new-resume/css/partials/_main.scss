@@ -10,7 +10,7 @@ html, body, .contains, .header {
 
 body {
 	background: #fff;
-	color: #69606b;
+	color: $fourthColor;
 	font: 400 22px/1.5 $secondFont;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -19,11 +19,11 @@ body {
 
 a {
 	outline: none;
-	color: $firstColor;
+	color: $secondColor;
 	text-decoration: none;
 
   &:hover, &:focus {
-    color: #69606b;
+    color: $fourthColor;
   	text-decoration: none;
   }
 }
@@ -36,25 +36,64 @@ a {
     background: $thirdColor;
 }
 
-.header-nav {
-	padding: 0 0 1em;
-	position: relative;
 
-  a {
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 0.7em;
-    letter-spacing: 1px;
-    padding: 0.3em 0;
-    display: inline-block;
-    opacity: 0.7;
-    margin: 0 2.5em 0 0;
-    white-space: nowrap;
-    color: $firstColor;
+.content > div:not(.title) {
+	padding: 0 2.25em;
+	font-size: 16px;
 
-    &:hover {
-      opacity: 1;
-      color: #69606b;
+  h1 {
+  	font-family: $titleFont;
+  }
+
+  h2 {
+  	color: $mainColor;
+  	font-size: 1.25em;
+  	margin-top: 0;
+  }
+
+  a:hover {
+  	color: $thirdColor;
+  	// border-bottom: 1px solid #69606b;
+  	padding-bottom: 2px;
+  }
+
+  b, i {
+    color: $mainColor;
+  }
+
+  p {
+  	margin: 0 auto 1.5em auto;
+  }
+
+  li {
+  	list-style: none;
+		padding-left: 0;
+    text-indent: -1.7em;
+
+		&.skills:before {
+			content: "•";
+			color: $thirdColor;
+			padding-right: 1em;
+		}
+
+    &.dev:before {
+      content: "\f121";
+      @include fa-li;
+    }
+
+    &.design:before {
+    	content: "\f08a";
+      @include fa-li;
+    }
+
+    &.tools:before {
+      content: "\f120";
+      @include fa-li;
+    }
+
+    &.cms:before {
+      content: "\f109";
+      @include fa-li;
     }
   }
 }

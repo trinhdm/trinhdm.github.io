@@ -1,9 +1,14 @@
 @import "partials/includes";
-@import "partials/nav-hover";
+@import "partials/nav";
+
 @import "partials/main";
 @import "partials/header";
-@import "partials/content";
+@import "partials/header-styling";
+@import "partials/header-transitions";
+@import "partials/body";
+
 @import "partials/button";
 @import "partials/modal";
-@import "partials/header-bg-img";
+@import "partials/portfolio";
+
 @import "partials/footer";
