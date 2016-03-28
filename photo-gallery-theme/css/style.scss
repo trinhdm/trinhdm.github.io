@@ -1,10 +1,14 @@
-@import "includes";
+@import "partials/includes";
+@import "partials/nav";
 
-@import "main";
+@import "partials/main";
+@import "partials/header";
+@import "partials/header-styling";
+@import "partials/header-transitions";
+@import "partials/body";
 
+@import "partials/button";
+@import "partials/modal";
+@import "partials/portfolio";
 
-@import "vertical-nav";
-@import "nav-style";
-@import "about-contact";
-@import "modal";
-@import "grid";
+@import "partials/footer";
