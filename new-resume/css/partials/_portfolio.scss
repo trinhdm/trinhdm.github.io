@@ -78,6 +78,12 @@
 		  border-bottom: 0px solid transparent !important;
 		  padding-bottom: 5px !important;
 		}
+
+		@supports (-ms-accelerator:true) {
+    span {
+        padding-left: 27px;
+    }
+}
 	}
 }
 
