@@ -8,7 +8,7 @@
 		transform: translateX(-33.3%) translateY(-50%);
 
 		@include phone {
-			width: 70%;
+			width: 90%;
 		}
 	}
 
@@ -21,7 +21,7 @@
 	  	margin: 0 auto;
 
 			@include phone {
-				font: 400 2em $titleFont;
+				font: 400 1.8em $titleFont;
 			}
 		}
 
@@ -32,7 +32,7 @@
 			color: #efefef;
 
 			@include phone {
-				font: 400 1.25 $titleFont;
+				font: 400 1.05 $titleFont;
 			}
 		}
 
@@ -71,7 +71,7 @@
 		@include phone {
 			-webkit-transform: translateY(-50%);
 			transform: translateY(-50%);
-			width: 70%;
+			width: 90%;
 		}
 	}
 
