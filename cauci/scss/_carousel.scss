@@ -1,0 +1,25 @@
+.carousel {
+  height: 500px;
+  margin-top: 110px;
+}
+
+.carousel-inner>.item>img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+}
+
+.carousel .carousel-control {
+  opacity: 0;
+  @include transition(all ease-out .5s);
+}
+
+.carousel:hover .carousel-control {
+  opacity: 1;
+  @include transition(all ease-in .5s);
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+}
