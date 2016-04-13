@@ -1,0 +1,39 @@
+#culturenight {
+  margin: 110px auto 50px;
+  line-height: 1.5em;
+
+  .col-md-12 {
+    text-align: center;
+  }
+}
+
+#cast, #dance {
+  img {
+    float: left;
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 100;
+  }
+
+  .col-md-6 {
+    padding: 0;
+    line-height: 1.5em;
+  }
+
+  .text {
+    padding: 70px 70px 0 35px;
+  }
+}
+
+#cast {
+  background-color: $light-blue;
+  height: 400px;
+  width: 100%;
+}
+
+#dance {
+  background-color: $light-gray;
+  height: 400px;
+  width: 100%;
+}
