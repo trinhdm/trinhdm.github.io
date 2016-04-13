@@ -30,7 +30,8 @@ a {
 }
 
 .container a, .modal-content a {
-  &:hover:not(.buttonlink), &:focus:not(.buttonlink) {
+  &:hover:not(.buttonlink), &:focus:not(.buttonlink),
+  &:hover:not(.board-hover-link), &:focus:not(.board-hover-link) {
     color: $black;
     position: relative;
     bottom: 1px;
