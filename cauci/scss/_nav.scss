@@ -9,6 +9,7 @@
   @include desktop-and-under {
     height: auto;
     padding-bottom: 15px;
+    overflow: visible;
   }
 
   a {
@@ -117,9 +118,12 @@
 }
 
 .navbar-right {
+  padding-right: 25px;
+
   @include desktop-and-under {
-    width: 200px;
+    width: 240px;
     margin: auto;
+    padding-right: 0;
   }
 }
 
