@@ -23,6 +23,10 @@
 
   .text {
     padding: 70px 70px 0 35px;
+
+    @include desktop-and-under {
+      padding: 50px 70px 50px 35px;
+    }
   }
 }
 
@@ -30,10 +34,22 @@
   background-color: $light-blue;
   height: 400px;
   width: 100%;
+
+  @include desktop-and-under {
+    height: 100%;
+
+    img {
+      margin-bottom: 50px;
+    }
+  }
 }
 
 #dance {
   background-color: $light-gray;
   height: 400px;
   width: 100%;
+
+  @include desktop-and-under {
+    height: 100%;
+  }
 }

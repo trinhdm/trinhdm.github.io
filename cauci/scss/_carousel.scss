@@ -48,6 +48,10 @@
   .carousel-control {
     text-shadow: 0 0 0 rgba(0,0,0,0);
     background-color: rgba(0,0,0,0);
+
+    @include phone {
+      width: 8%;
+    }
   }
 
   .carousel-control.left, .carousel-control.right {
@@ -58,7 +62,6 @@
   .item-active, .item {
     text-align: center;
   }
-
 }
 
 
