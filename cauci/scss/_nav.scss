@@ -1,7 +1,7 @@
 #caucinav {
   background-color: #fff;
   height: 110px;
-	overflow: hidden;
+	overflow: visible;
 	-webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
 	transition: height 0.3s;
@@ -9,7 +9,6 @@
   @include desktop-and-under {
     height: auto;
     padding-bottom: 15px;
-    overflow: visible;
   }
 
   a {
