@@ -1,0 +1,69 @@
+{% include head.html %}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+<div id="top" name="top"></div>
+<div id="container" class="container blog-animation">
+  <header class="blog-header">
+
+    <ul class="back-to-blog">
+      <li>
+        <a href="/writings/" class="back-to-blog"><i class="fa fa-chevron-left"></i> back</a></li>
+      </li>
+    </ul>
+
+    <nav id="blog-nav" class="navbar navbar-default hidden">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          {% include nav.html %}
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+    </nav>
+				<div class="blog-bg"><img src="{{ site.baseurl }}/assets/img/unsplash-small.jpg" alt="Background Image" /></div>
+				<div class="blog-title">
+          <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+          <p class="post-meta">Posted by Doreen Trinh on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+				</div>
+	</header>
+</div>
+
+</header>
+
+<div id="wrap">
+  <div id="main">
+  <div class="container" id="blogpost" itemprop="articleBody">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+        {{ content }}
+
+        <div id="post-author">
+          <h4>Doreen Trinh</h4>
+          <p>A junior web developer chronicaling her experiences through the front-end world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</article>
+
+    {% include footer.html %}
+
+<script src="{{ site.baseurl }}/assets/js/blogpost-header.js"></script>
