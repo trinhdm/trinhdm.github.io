@@ -33,6 +33,10 @@
   background-color: $light-gray;
   width: 100%;
 
+  img {
+    width: 85%;
+  }
+
   h1 {
     font: 600 3em $body-font;
     text-transform: uppercase;

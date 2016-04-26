@@ -19,7 +19,11 @@
 }
 
 .carousel-inner, .carousel-inner>.item, .carousel-inner>.item-active {
-  height: 550px;
+  height: 600px;
+
+  @include phone {
+    height: 550px;
+  }
 }
 
 .carousel-indicators li {

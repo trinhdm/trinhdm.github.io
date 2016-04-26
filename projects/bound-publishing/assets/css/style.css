@@ -258,7 +258,10 @@ a {
       object-fit: cover; } }
 
 .carousel-inner, .carousel-inner > .item, .carousel-inner > .item-active {
-  height: 550px; }
+  height: 600px; }
+  @media (min-width: 320px) and (max-width: 767px) {
+    .carousel-inner, .carousel-inner > .item, .carousel-inner > .item-active {
+      height: 550px; } }
 
 .carousel-indicators li {
   border-radius: 0; }
@@ -307,6 +310,23 @@ a {
   padding: 30px;
   background-color: #efefef;
   color: #111; }
+  .footer .row {
+    margin-bottom: 1%; }
+  .footer .fa {
+    padding-right: 30px;
+    font-size: 1.5em; }
+    .footer .fa:hover {
+      color: #2C82C5;
+      position: relative;
+      top: -2px;
+      cursor: pointer;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+  .footer .fa-youtube {
+    padding: 0; }
 
 #about, #sneakpeek, #blog, #newstories, #signup {
   padding: 70px 0; }
@@ -334,6 +354,8 @@ a {
 #about {
   background-color: #ccc;
   width: 100%; }
+  #about img {
+    width: 85%; }
   #about h1 {
     font: 600 3em "Source Sans Pro", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
