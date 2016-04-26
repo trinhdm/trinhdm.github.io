@@ -269,13 +269,13 @@
     text-transform: uppercase;
     font: 600 .9em $body-font;
     padding: 10px 25px;
-    background-color: $black;
+    background-color: $call-to-action;
     color: $white;
     border: 0;
 
     &:hover {
       border: 0;
-      background-color: $dark-gray;
+      background-color: $black;
       @include transition(all .3s ease);
     }
   }

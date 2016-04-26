@@ -39,7 +39,7 @@ a {
       background-color: #000;
       padding-top: 40px; } }
   #boundnav .early-access {
-    background-color: #2C82C5; }
+    background-color: #FF8A00; }
     #boundnav .early-access a {
       border: 2px solid #000;
       margin: 4.5px !important;
@@ -530,12 +530,12 @@ a {
     text-transform: uppercase;
     font: 600 0.9em "Source Sans Pro", Helvetica, Arial, sans-serif;
     padding: 10px 25px;
-    background-color: #000;
+    background-color: #FF8A00;
     color: #fff;
     border: 0; }
     #signup .btn:hover {
       border: 0;
-      background-color: #777;
+      background-color: #000;
       -webkit-transition: all 0.3s ease;
       -moz-transition: all 0.3s ease;
       -ms-transition: all 0.3s ease;
