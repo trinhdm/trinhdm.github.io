@@ -1,0 +1,72 @@
+.carousel-control.left, .carousel-control.right {
+  background-image: none;
+  visibility: hidden;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+  width: 100%;
+
+  @include tablet {
+    min-height: 100%;
+    width: auto;
+  }
+
+  @include phone {
+    min-height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
+.carousel-inner, .carousel-inner>.item, .carousel-inner>.item-active {
+  height: 550px;
+}
+
+.carousel-indicators li {
+  border-radius: 0;
+
+  &:hover {
+    border-color: $blue;
+  }
+
+  &.active:hover {
+    background-color: $blue;
+  }
+}
+
+
+.carousel-text {
+  z-index: 100;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 400px;
+  color: $white;
+  font: italic 1.3em $title-font;
+  @include transition(all .2s ease);
+
+  @include phone {
+    width: 280px;
+  }
+
+  &:hover {
+    .title {
+      border-color: $blue;
+      color: $blue;
+      @include transition(all .2s ease);
+    }
+  }
+
+  .title {
+    padding: 15px;
+    border: 7px solid $white;
+    font: 700 2.5em $body-font;
+    width: auto;
+    margin: 0 auto 3%;
+  }
+}
