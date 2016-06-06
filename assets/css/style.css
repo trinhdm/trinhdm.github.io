@@ -1178,7 +1178,7 @@ button.trigger span::before {
   position: relative;
   margin: 0 auto 40px;
   width: 100%;
-  min-height: 180px;
+  min-height: 230px;
   overflow: hidden; }
 
 .blog-bg {
@@ -1389,6 +1389,12 @@ button.trigger span::before {
     margin: .85em 0 .5em; }
   #blogpost h1 {
     font-family: "Roboto Slab", Georgia, serif; }
+  #blogpost pre {
+    margin: 30px 0;
+    border-radius: 0;
+    border: 0; }
+  #blogpost code {
+    color: #43939d; }
 
 #post-author {
   padding: 20px 0 80px;
