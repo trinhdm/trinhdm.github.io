@@ -9,13 +9,13 @@ categories: blog
 
 A friend recently gave me a book called [100 Things Every Designer Needs to Know About People][100thingsdesign]. The knowledge within this book is applicable for any area of design, whether it's web design, print or industrial. It combines science and examples to show what (actions, colors, etc) elicit responses from people. I decided to apply the knowledge that I gained from this book in my redesign of SoundCloud.
 
-<img src="/assets/img/blog_8-30_sc_macbook_preview_mine.jpg"  class="blog-full-width-img" data-action="zoom">
+<img src="/assets/img/blog_8-30_sc_macbook_preview_mine.jpg" class="blog-full-width-img">
 
-If you haven't heard of SoundCloud, it's a music application that fills the void that MySpace desperately tried to conquer - free music streaming, easy track sharing and more. Back in the days of MySpace, music streaming was only a portion of the whole "MySpace experience." Other music distribution platforms came along, such as [Pandora][pandora] (launched in 2000) and [HypeM][hypem] (launched in 2005), but they weren't nearly as successful as SoundCloud (launched in 2007).
+If you haven't heard of SoundCloud, it's a music application that fills the void that MySpace desperately tried to conquer - free music streaming, easy track sharing and more. Back in the days of MySpace, music streaming was only a portion of the whole "MySpace experience", though there was no platform solely dedicated for sharing music. Other music distribution platforms came along, such as [Pandora][pandora] (launched in 2000) and [HypeM][hypem] (launched in 2005), but they weren't nearly as successful as SoundCloud (launched in 2007).
 
-SoundCloud's current design gets the job done, but I feel like they could make several improvements to their UX/UI. It has come a long way since I started using SoundCloud back in 2013, but their interface still feels cluttered and unclean. My <b>main goal</b> with this was to revamp SoundCloud with a clean and clear design that is easy to navigate and isn't too heavy on visual clutter / cognitive load. In addition to that, I wanted to increase social engagement with the platform.
+SoundCloud's current design gets the job done, but I feel like they could make several improvements to their UX/UI. It has come a long way since I started using SoundCloud back in 2013, but their interface still feels cluttered and unclean. My <b>main goal</b> with this was to revamp SoundCloud with a clean and clear design that is easy to navigate and isn't too heavy on visual clutter / cognitive load. In addition to that, I wanted to increase social engagement with the platform and boost visibility of lesser known SoundCloud features, such as stations.
 
-I'll start first with the issues. If you click on any of the images, they'll lead you to the full sized versions.
+I'll start first with the issues. If you click on any of the images below, they'll lead you to the full sized versions.
 
 
 
@@ -34,7 +34,7 @@ I'll start first with the issues. If you click on any of the images, they'll lea
 <img src="/assets/img/blog_8-30_sc_navbar_ellipsis2_old.png" style=" max-height: 320px; width: auto;" data-action="zoom"></div>
 <b>The ellipsis on the navigation bar</b> seems like a synonym for the hamburger menu icon, though less intuitive. <a href="http://www.uxmovement.com/buttons/how-to-use-arrow-and-ellipsis-affordances/">UX Movement</a> has remarked that " ..on a user interface, designers use ellipsis on buttons and menus for unfinished actions. The user completes the action on the modal window." This behavior is odd, since when you click on the three dots on SoundCloud, it brings you to a menu instead of performing an action (some examples are <i>open..</i> or <i>new..</i> as seen on other apps such as Word or Photoshop). Although there isn't a set definition of when to use ellipsis and when to use hamburger menus, I feel like in this case, a hamburger menu would've been more intuitive.
 
-<b>There are multiple instances of promoting SoundCloud Go</b>, as seen in the navbar, in the ellipsis menu and in the ad space on the Stream page. As the [Nielsen Norman Group][nngroup], a company based on researching UI/UX, has stated, "..designers know these links are duplicates, but users do not. So, they often end up scanning both sets of links – effectively doubling the amount of analysis they need to conduct to select the best link. Repeating links burdens your visitors." I understand that they're trying to promote people purchasing a subscription of Go, but it causes cognitive strain and it also crowds the web page. It would be best if SoundCloud removed all but the link to the right of the search bar for SoundCloud Go.
+<b>There are multiple instances of promoting SoundCloud Go</b>, as seen in the navbar, in the ellipsis menu and in the various ad spaces throughout the site. As the [Nielsen Norman Group][nngroup], a company based on researching UI/UX, has stated, "..designers know these links are duplicates, but users do not. So, they often end up scanning both sets of links – effectively doubling the amount of analysis they need to conduct to select the best link. Repeating links burdens your visitors." I understand that they're trying to promote people purchasing a subscription of Go, but it causes cognitive strain and it also crowds the web page. It would be best if SoundCloud removed all but the link to the right of the search bar for SoundCloud Go.
 <div style="clear: both;"></div>
 
 
@@ -138,9 +138,9 @@ I've grouped the statistics together on the right side of the track. As stated e
 <h3>Solution</h3>
 <img src="/assets/img/blog_8-30_sc_discover_mine.jpg"  class="blog-full-width-img" data-action="zoom"><center><small><i>My proposed solution concept. <a href="/assets/img/blog_8-30_sc_discover_mine.jpg">Click here for the full sized image.</a></i></small></center>
 
-Having the same sidebar as the Stream page is fine, but I've replaced the sidebar with a chart listing of the top 10 songs played during this week instead of having a separate link for charts. The new sidebar with the charts allows the user to easily view top songs of that week, rather than navigating to a new page. This plays into the theme of 'discovering new music' for that page. In this design, the user would have the option to change their default chart to something else (such as the Top 10 tracks of the Rock & Rock genre) within the account settings page.
+Having the same sidebar as the Stream page is fine, but I've replaced the sidebar with a chart listing of the top 10 songs played this week instead of having a separate link for charts. The new sidebar with the charts allows the user to easily view top songs of that week, rather than navigating to a new page. This plays into the theme of 'discovering new music' for that page. In this design, the user would have the option to change their default chart to something else (such as the Top 10 tracks of the Rock & Rock genre) within the account settings page.
 
-Instead of scrolling left and right to view more song suggestions, having a link that would lead to a separate playlist would keep the interface clean and clear. It won't strain users to scroll left and right to view more suggestions. If the user opts for list view, it'll list 2-3 songs, rather than the whole playlist.
+Instead of scrolling left and right to view more song suggestions, having a link that would lead to a separate playlist would keep the interface clean and clear. It won't strain users to scroll left and right to view more suggestions. If the user opts for list view, it'll list 2-3 songs and then a link to view the rest of the playlist, rather than the whole playlist.
 
 
 
