@@ -1,12 +1,15 @@
 ---
 layout: post
 title:  "Fade out parallax layers on scroll."
-date:   2016-08-20 06:03:00 -0700
+date:   2016-07-20 06:03:00 -0700
 description: If you're looking for a fancy way to introduce your website, this simple slider will do the job.
 categories: blog
 ---
 
 The title for this blog post may have been hard to describe with words, but basically, it's a walkthrough of how I created [this slider][bound-slider]. It's basically a three layered "slider" that fades from layer to layer on scroll.
+
+Have a look at the demo below:
+<iframe width="100%" height="500" src="//jsfiddle.net/1dfrw9h1/embedded/result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 At the time of writing, I haven't figured out how to implement a way for the user to add more pages to the slider (for WordPress), but if anyone has any ideas, that would be great. Perhaps I could create a custom post type for the slider, store each slider (text/image/other things) in a post, and then create a new WP Loop to generate the posts to the slider; though I would love to implement it through a theme options page rather than a custom post type. It's a topic to explore in the near future.
 
