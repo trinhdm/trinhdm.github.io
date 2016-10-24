@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="content">
+      <div class="col-md-8 col-md-offset-2">
+        {{ content }}
+      </div>
+
+      <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+
+    {% include footer.html %}
+
+    <div style="clear:both;"></div>
+
+  </body>
+
+</html>
+
+<style type="text/css">
+footer {
+  position:absolute;
+  bottom:0;
+  width: 100%;
+}
+
+.col-md-8, .content {
+  height: 100vh;
+}
+</style>

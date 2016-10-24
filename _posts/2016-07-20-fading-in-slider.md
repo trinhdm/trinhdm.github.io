@@ -1,10 +1,15 @@
 ---
 layout: post
-title:  "Fade out parallax layers on scroll."
+title:  Parallax Slider
 date:   2016-07-20 06:03:00 -0700
-description: If you're looking for a fancy way to introduce your website, this simple slider will do the job.
+description: A tutorial on how I created the parallax slider for Bound.
 categories: blog
 ---
+
+<!-- old:
+title:  "Fade out parallax layers on scroll."
+description: If you're looking for a fancy way to introduce your website, this simple slider will do the job. -->
+
 
 The title for this blog post may have been hard to describe with words, but basically, it's a walkthrough of how I created [this slider][bound-slider]. It's basically a three layered "slider" that fades from layer to layer on scroll.
 

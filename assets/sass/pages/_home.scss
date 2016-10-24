@@ -1,0 +1,293 @@
+.content {
+  // min-height: 68vh;
+  // width: $body-width;
+  // max-width: $body-width;
+  margin: 40px auto 0;
+  display: block;
+  // padding: 20px;
+  background: lighten($alto, 10%);
+  padding: 25px 0 0;
+  position: relative;
+  z-index: 100;
+
+  @include tablet {
+    padding: 20px 40px;
+  }
+
+  p.small {
+    font: 600 0.85em $body-font;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $mine-shaft;
+    margin-bottom: 10px;
+
+    &.with-margin {
+      // margin: 15px 0 25px;
+      margin: 20px 0 30px;
+
+      @include mobile {
+        margin: 20px 0 15px;
+      }
+    }
+
+    a {
+      color: $mine-shaft;
+      text-decoration: none;
+      display: inline-block;
+      @include transition(all .3s ease-out);
+
+      &:hover {
+        color: $silver;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        margin-top: -8px;
+        background: transparent;
+        transition: width .5s ease, background-color .5s ease;
+      }
+
+      &:hover:after {
+        width: 100%;
+        background: $silver;
+        opacity: .5;
+      }
+    }
+  }
+
+  p.intro-text {
+    @include header-styling;
+
+    @include mobile {
+      font-size: 1.7em;
+      line-height: 1.35;
+    }
+  }
+
+  b {
+    color: $mine-shaft;
+    font-weight: 600;
+  }
+
+  span.links-wrap {
+    width: 100%;
+  }
+
+  a.links {
+    color: $dodger-blue;
+    // color: darken($silver, 5%);
+    font: 600 0.8em $body-font;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display: inline-block;
+    @include transition(color .3s ease-out);
+
+    &:hover {
+      color: $mine-shaft;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      margin-top: -8px;
+      background: transparent;
+      transition: width .5s ease, background-color .5s ease;
+    }
+
+    &:hover:after {
+      width: 100%;
+      background: $mine-shaft;
+      opacity: .3;
+    }
+  }
+
+  .header-spacing {
+    margin-bottom: 20px;
+
+    @include mobile {
+      margin-left: 15px;
+    }
+  }
+
+  .black-header, .silver-header {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+
+  .black-header {
+    color: $mine-shaft;
+  }
+
+  .silver-header {
+    color: $silver;
+  }
+}
+
+
+
+.row-no-margin {
+  margin: 0;
+}
+
+.home-button {
+  font: 600 0.85em $body-font;
+  color: $white !important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  max-width: 210px;
+  padding: 15px 18px;
+  margin: 0 auto;
+  cursor: pointer;
+
+  background: linear-gradient(to right, $mine-shaft 49.5%, $dodger-blue 50%);
+  background-position: 99.75% 0;
+  background-size: 200% 100%;
+  @include transition(all 1s ease);
+
+  &:hover, &:focus {
+    text-decoration: none;
+    background-position: 0 0;
+    @include transition(all 1s ease);
+  }
+
+  a {
+    color: $white !important;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+.intro {
+  position: relative;
+
+  .intro-wrap {
+    @media screen and (min-width: 1400px) {
+      height: 600px;
+      position: absolute;
+      top: 10%;
+    }
+
+    @include tablet {
+      height: 600px;
+      position: absolute;
+      top: 10%;
+    }
+
+    @include mobile {
+      padding: 0 20px;
+    }
+  }
+}
+
+
+
+#selected-projects {
+  margin: 20px -15px 50px;
+}
+
+#recent-writings {
+  margin: 0 -15px 40px;
+}
+
+.see-work {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 80px);
+  z-index: -1;
+}
+
+#see-my-work-arrow {
+  font: 600 0.85em $body-font;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $white;
+  position: absolute;
+  right: 0;
+  bottom: calc(0% + 64px);
+  /* max-height: 30px; */
+  max-width: 150px;
+  /* margin: 0 auto; */
+  padding: 15px 18px;
+  cursor: pointer;
+  background: $dodger-blue;
+  @include transition(background .3s ease);
+
+  &:hover {
+    background: $silver;
+    @include transition(background .3s ease);
+  }
+
+  .faa-hover {
+    position: absolute;
+    top: -9px;
+    right: 17px;
+    font-size: 1em;
+    visibility: hidden;
+  }
+
+  .fa {
+    margin-left: 5px;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+}
+
+#home {
+  margin-bottom: 180px;
+}
+
+#home-contact {
+  text-align: center;
+  width: 100%;
+  height: 220px;
+  background: url('../img/cork-wallet.png');
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  @include mobile {
+    height: 270px;
+  }
+
+  h2 {
+    @include header-styling;
+    color: darken($silver, 10%);
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+  }
+
+  #home-contact-wrapper {
+    position: relative;
+    top: 2%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    .fa {
+      color: darken($silver, 10%);
+      margin: 0 20px;
+      font-size: 2.5em;
+      @include transition(all .3s ease);
+
+      &:hover {
+        color: $mine-shaft;
+        @include transition(all .3s ease);
+      }
+    }
+  }
+}

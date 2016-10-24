@@ -1,0 +1,16 @@
+#portfolio {
+  margin-top: 50px;
+
+  p {
+    line-height: 1.8;
+  }
+
+  .portfolio-intro {
+    @include header-styling;
+    margin-bottom: 30px;
+
+    @include mobile {
+      margin: 0 20px 20px;
+    }
+  }
+}

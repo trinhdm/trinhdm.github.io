@@ -1,10 +1,14 @@
 ---
 layout: post
-title:  "Free Web Design and Development Resources That You Didn't Know Existed"
+title:  "Favorite Resources"
 date:   2016-09-05 06:03:00 -0700
-description: The Internet is yuge. That's right, yuge.
+description: A comprehensive list of my personal favorite resources and tools for web design and development.
 categories: blog, web design, web development, resources
 ---
+
+<!-- old:
+title:  "Free Web Design and Development Resources That You Didn't Know Existed"
+description: The Internet is yuge. That's right, yuge. -->
 
 I had a friend asked me this week for a list of resources that could help him jumpstart his career in web design and development. They were looking for inspirational sites for UI/UX ideas, to just plainly.. free resources. Plus, this would be a great hub for me to reference to whenever I'm in a dire need of some odd resource I can't remember (like right now, since I had to surf through my black hole of my Internet history to remember some websites). Enough rambling; here's a comprehensive list of my personal favorite resources and tools for web design and development!
 

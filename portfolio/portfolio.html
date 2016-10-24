@@ -1,0 +1,73 @@
+---
+layout: portfolio-item
+---
+
+<script type="text/javascript">
+document.getElementById('portfolio-nav-left').href='/portfolio/bound.html';
+document.getElementById('portfolio-nav-right').href='/portfolio/foreground.html';
+</script>
+
+<div id="portfolio-item">
+  <h2 class="portfolio-title">Portfolio</h2>
+
+  <div id="portfolio-directory" class="row">
+    <div class="col-md-2 col-sm-2 col-xs-6">
+      <b>Type</b><br />
+      <span>WordPress</span>
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-6">
+      <b>Role</b><br />
+      <span>Designer + Developer</span>
+    </div>
+    <div class="col-md-5 col-sm-6 col-xs-12">
+      <b>Tech</b><br />
+      <span>JS</span>
+      <span>CSS</span>
+      <span>HTML</span>
+      <span>Illustrator</span>
+      <span>Jekyll</span>
+    </div>
+  </div>
+
+  <p>
+    My portfolio, currently within it's third iteration, is built with Jekyll. I felt like it needed a redesign. :)
+  </p>
+
+  <img src="/assets/img/portfolio.png" class="img-responsive" />
+
+  <h3>Thought Process</h3>
+  <p>
+    I honestly attempted to build this redesign with React and React Router first, since I'm currently learning it through various online resources such as Code Academy.
+    After much frustration, I decided to go ahead and develop a non-React version first. I haven't given up on the project yet -- you can see my progress on the Git repository for the React version <a href="/">here</a>.
+  </p>
+
+  <h3>Page Transitions</h3>
+  <p>
+    If you haven't noticed, when you click on a link on this website, the body fades out before jumping to the next web page. I never liked how jerky web pages jump from one to another (understandably, ReactJS can solve this problem), so I sought for a way to fix this problem.
+  </p>
+
+  <pre>
+    $.fn.leavePage = function() {
+      this.click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $('body').fadeOut(500, function(){
+          window.location = linkLocation;
+        });
+      });
+    };
+
+    $('.transition').leavePage();
+  </pre>
+
+  <p>
+    When a user clicks on a link, I call on a function that fades out the body before they go to the next page. When the user arrives on the next page, the body content fades in.
+  </p>
+
+  <h3>React</h3>
+  <p>
+    React is a difficult beast to conquer; it's not your normal MVC framework - in fact, it only covers the 'V' of MVC.
+    Despite the mountains of obstacles and frustration I've endured, React is amazing. Reusable components help so much.
+    There are a lot of things for me to learn on this journey. I need to pick up either Flux or Redux before I continue with redeveloping my portfolio as a ReactJS app. In the meanwhile, stay tuned!
+  </p>
+</div>

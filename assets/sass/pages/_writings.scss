@@ -1,0 +1,80 @@
+#writings {
+  margin: 50px 0 30px;
+
+  .writings-intro {
+    @include header-styling;
+    margin-bottom: 30px;
+
+    @include mobile {
+      margin: 0 20px 20px;
+    }
+
+    &.post {
+      margin-bottom: 10px;
+    }
+  }
+
+  .post-content {
+    line-height: 1.8;
+    
+    @include mobile {
+      margin: 20px 20px 30px;
+    }
+  }
+
+  .datetime {
+    color: $mine-shaft;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .45em;
+    margin-left: 20px;
+
+    @include mobile {
+      display: block;
+      margin-left: 0;
+    }
+  }
+
+  h2 {
+    font-size: 2em;
+    color: $mine-shaft;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre {
+    border: 0;
+    background: transparent;
+  }
+
+  code {
+    color: lighten($dodger-blue, 12.5%);
+    background-color: lighten($dodger-blue, 37.5%);
+  }
+
+  .float-right {
+    height: auto;
+    margin-bottom: 10px;
+    float: right;
+    padding-left: 25px;
+  }
+
+  .float-left {
+    float: left;
+    padding-right: 25px;
+
+    @include mobile {
+      padding-bottom: 15px;
+    }
+  }
+
+  .float-none {
+    @include mobile {
+      float: none !important;
+      padding: 0 !important;
+    }
+  }
+}

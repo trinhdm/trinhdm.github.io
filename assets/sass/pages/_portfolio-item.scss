@@ -1,0 +1,196 @@
+.portfolio-navigation {
+  position: fixed;
+  font-size: 4em;
+  z-index: 200;
+  height: 100vh;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  &.left, &.right {
+    width: 100px;
+  }
+
+  &.left {
+    left: 50px;
+  }
+
+  &.right {
+    left: calc(100% - 50px);
+  }
+
+  .container {
+    position: relative;
+    top: 45%;
+    max-width: 100px;
+  }
+
+  .chevron::before {
+    color: lighten($silver, 17.5%);
+    content: '';
+    border-style: solid;
+    border-width: 0.1em 0.1em 0 0;
+    height: 0.45em;
+    width: 0.45em;
+    position: relative;
+    top: 0.15em;
+    left: 0.15em;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    display: inline-block;
+    @include transition(color .3s ease);
+  }
+
+  .chevron:hover::before {
+    color: $mine-shaft;
+    @include transition(color .3s ease);
+  }
+
+  .chevron.right {
+    &:before {
+      transform: rotate(45deg);
+  	  left: -50px;
+    }
+
+    &.hover {
+      color: lighten($silver, 17.5%);
+      position: absolute;
+      left: 15px;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      z-index: 200;
+
+      &:hover {
+        color: lighten($silver, 17.5%);
+      }
+    }
+
+    &:hover.hover {
+      -webkit-animation-name: ripple-right;
+      animation-name: ripple-right;
+      animation-iteration-count: 1;
+    }
+  }
+
+  .chevron.left {
+    &:before {
+  	  transform: rotate(-135deg);
+    }
+
+    &.hover {
+      color: lighten($silver, 17.5%);
+      position: absolute;
+      left: 15px;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      z-index: 200;
+
+      &:hover {
+        color: lighten($silver, 17.5%);
+      }
+    }
+
+    &:hover.hover {
+      -webkit-animation-name: ripple-left;
+      animation-name: ripple-left;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+#portfolio-item {
+  margin: 50px 0 60px;
+
+  @include mobile {
+    margin: 50px 20px 60px;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  img {
+    margin: 30px 0;
+  }
+
+  blockquote {
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.8;
+  }
+
+  pre {
+    border: 0;
+    background: transparent;
+  }
+
+  h3 {
+    margin-top: 35px;
+  }
+
+  .portfolio-title {
+    @include header-styling;
+  }
+
+  #portfolio-directory {
+    margin-bottom: 30px;
+
+    b {
+      font: 600 0.85em $body-font;
+      color: $mine-shaft;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-right: 15px;
+    }
+
+    span {
+      color: $dodger-blue;
+      letter-spacing: .5px;
+      padding: 3px 6px;
+      margin-top: 2px;
+      margin-right: 5px;
+      background: darken($alto, 2.5%);
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    a {
+      font: 600 0.8em $body-font;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-top: 2px;
+      padding: 5.5px 10px;
+      display: inline-block;
+      background: linear-gradient(to right, $mine-shaft 49.75%, $dodger-blue 50%);
+      background-position: 99.75% 0;
+      background-size: 200% 100%;
+      @include transition(all 1s ease);
+
+      &:hover, &:focus {
+        text-decoration: none;
+        background-position: 0 0;
+        @include transition(all 1s ease);
+      }
+
+      .fa {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .img-desc {
+    margin-bottom: 20px;
+    font-size: 95%;
+    text-align: center;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+}

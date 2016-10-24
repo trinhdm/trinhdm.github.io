@@ -1,0 +1,48 @@
+.writings-row {
+  padding: 30px 0;
+  border-bottom: 1px solid lighten($black, 85%);
+
+  @include mobile {
+    padding: 30px 15px;
+  }
+
+  &:hover {
+    background: lighten($alto, 5.8%);
+    @include transition(all .3s ease);
+  }
+
+  h3 {
+    color: $black;
+    font-size: 1.45em;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &.last-row {
+    margin-bottom: 30px;
+  }
+
+  .btn-view-post {
+    color: #fff;
+    font-size: .9em;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 18px;
+    border-radius: 0;
+    background-color: $silver;
+    float: right;
+    @include transition(all .3s ease-out);
+
+    @include mobile {
+      margin: 20px auto 0;
+      width: 112px;
+      display: block;
+      float: none;
+    }
+
+    &:hover {
+      background-color: $mine-shaft;
+    }
+  }
+}

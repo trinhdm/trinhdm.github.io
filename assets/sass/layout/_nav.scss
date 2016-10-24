@@ -1,0 +1,121 @@
+nav#portfolio-navbar {
+  font: 600 .8em $body-font;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  background: $white;
+  // border-bottom: 1px solid $alto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  top: -60px;
+
+  li {
+    display: inline-block;
+    // margin-right: 5px;
+
+    a {
+      display: inline-block;
+      padding: 19.5px 15px;
+      color: $silver;
+      text-decoration: none;
+
+      &:hover, &:focus {
+        color: darken($silver, 20%);
+        background: lighten($silver, 40%);
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        margin-top: -11px;
+        background: transparent;
+        transition: width .5s ease, background-color .5s ease;
+      }
+
+      &:hover:after {
+        width: 100%;
+        background: $mine-shaft;
+        opacity: .3;
+      }
+    }
+
+    &.active {
+      a {
+        color: $mine-shaft;
+        background: transparent;
+        // background: lighten($conifer, 30%);
+      }
+    }
+  }
+
+  #navbar-interior {
+    width: $body-width;
+    max-width: $body-width;
+    height: $navbar-height;
+    margin-left: 16.66666667%;
+    padding: 0;
+
+    @include tablet {
+      width: auto;
+      max-width: none;
+      padding: 0 40px;
+      margin: 0;
+    }
+
+    @include mobile {
+      width: auto;
+      max-width: none;
+      padding: 0 15px;
+      margin: 0;
+    }
+  }
+
+  .navbar-header {
+    height: $navbar-height;
+    line-height: $navbar-height;
+
+    @include mobile {
+      padding-left: 15px;
+    }
+  }
+
+  .navbar-name {
+    color: $camouflage-green;
+
+    &:hover, &:focus {
+      color: $envy;
+      text-decoration: none;
+    }
+  }
+
+  a#brand {
+    color: $mine-shaft;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      color: lighten($silver, 20%);
+      background: lighten($silver, 40%);
+    }
+  }
+
+  .navbar-collapse {
+    @include mobile {
+      border: 0;
+      background: $white;
+    }
+  }
+
+  .navbar-nav {
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  .navbar-toggle {
+    @include mobile {
+      margin-top: 12px;
+    }
+  }
+}

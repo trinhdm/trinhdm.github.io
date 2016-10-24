@@ -1,0 +1,198 @@
+/* About.html - Skills - Pie Chart
+=============================================*/
+
+@-webkit-keyframes bake-pie {
+  from {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+            transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bake-pie {
+  from {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+            transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+
+
+/* Portfolio.html - rippling effect for arrows
+=============================================*/
+@-webkit-keyframes ripple-left {
+  0% {
+    left: 15px;
+  }
+
+  100% {
+    left: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-left {
+  0% {
+    left: 15px;
+  }
+
+  100% {
+    left: 0px;
+    opacity: 0;
+  }
+}
+
+
+@-webkit-keyframes ripple-right {
+  0% {
+    left: 15px;
+  }
+
+  100% {
+    left: 30px;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-right {
+  0% {
+    left: 15px;
+  }
+
+  100% {
+    left: 30px;
+    opacity: 0;
+  }
+}
+
+
+
+/* Fade Out
+=============================================*/
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+/* Float (for font awesome)
+=============================================*/
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.faa-float.animated,
+.faa-float.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-float {
+  -webkit-animation: float 2s linear infinite;
+  animation: float 2s linear infinite;
+}
+
+.faa-float.animated.faa-fast,
+.faa-float.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-float.faa-fast {
+  -webkit-animation: float 1s linear infinite;
+  animation: float 1s linear infinite;
+}
+
+.faa-float.animated.faa-slow,
+.faa-float.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-float.faa-slow {
+  -webkit-animation: float 3s linear infinite;
+  animation: float 3s linear infinite;
+}
+
+
+
+
+/* Float More (for everything else)
+=============================================*/
+
+@-webkit-keyframes float-more {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-more {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.regular-float {
+  -webkit-animation: float-more 3s linear infinite;
+  animation: float-more 3s linear infinite;
+}

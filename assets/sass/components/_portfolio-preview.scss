@@ -1,0 +1,84 @@
+.project-thumbnail {
+  overflow: hidden;
+  position: relative;
+  height: 260px;
+  margin-bottom: 30px;
+
+  &.left {
+    padding-left: 0;
+
+    @include tablet {
+      padding: 0;
+    }
+
+    @include mobile {
+      padding: 0 15px;
+    }
+  }
+
+  &.right {
+    padding-right: 0;
+
+    @include tablet {
+      padding: 0;
+    }
+
+    @include mobile {
+      padding: 0 15px;
+    }
+  }
+
+  .project-thumbnail-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: $silver;
+
+    img {
+      width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      -webkit-filter: grayscale(50%);
+      filter: grayscale(50%);
+      @include opacity(.75);
+      @include transform(scale(1));
+      @include transition(all .3s ease-out);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover>img {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+      @include transform(scale(1.08));
+      @include opacity(1);
+    }
+
+    &:hover>.project-thumbnail-text {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+  }
+
+  .project-thumbnail-text {
+    opacity: 0;
+    background: $white;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 100;
+    padding: 8px 14px;
+    @include transition(all .15s ease-out);
+
+    h4, h5 {
+      color: $mine-shaft !important;
+    }
+
+    h4 {
+      font-weight: 600;
+    }
+  }
+}

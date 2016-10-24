@@ -1,36 +1,118 @@
 ---
-layout: home-page
-title: Doreen Trinh | Junior Web Developer
+layout: home
 ---
 
-<div class="container" style="padding: 110px 2.25em" id="about">
-  <div class="row">
-    <div class="col-md-4 col-md-offset-1 col-xs-12">
-      {% include_relative _includes-home/skills.html %}
+<div class="intro row">
+  <div id="see-my-work-arrow">
+    see my work <i class="fa fa-chevron-down faa-float animated"></i>
+    <i class="fa fa-heart faa-float animated faa-hover"></i>
+  </div>
 
-    </div>
-    <div class="col-md-6 col-xs-12">
-      {% include_relative _includes-home/about.html %}
+  <div class="intro-wrap">
+    <p class="small with-margin">– Hi!</p>
 
-    </div>
+    <p class="intro-text">
+      My name is <b>Doreen Trinh</b>, and I am a junior <b>Front-End Developer</b> and <b>Designer</b> from Southern California, currently working as a freelancer.<br />
+      I stand on a sweet spot where design & code intersects.
+    </p>
+
+    <p class="small with-margin"><a href="/about/" class="transition">– Read more about me →</a></p>
+
+    <!-- <p class="small with-margin"><a href="mailto:doreenmtrinh@gmail.com" class="transition">– Send me an email (doreenmtrinh@gmail.com) →</a></p> -->
+
+    <p class="small">– Find me on</p>
+    <span class="links-wrap">
+      <a class="links transition" href="https://github.com/trinhdm/">Github</a> – <a class="links">Behance</a> – <a class="links" href="https://www.linkedin.com/in/doreen-trinh-378a99100">LinkedIn</a>
+    </span>
   </div>
 </div>
 
-<div class="container" style="padding-top: 5px" id="projects">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h1>Projects I've worked on</h1>
 
-      {% include_relative _includes-home/portfolio.html %}
-
-    </div>
-  </div>
+<div id="selected-projects" class="row">
+<div class="header-spacing">
+  <span class="silver-header">Selected</span> <span class="black-header">Projects</span><br>
 </div>
 
-<div class="container" style="padding: 170px 2.25em; margin-bottom: 200px;" id="contact">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      {% include_relative _includes-home/contact.html %}
-    </div>
+<a class="transition" href="/portfolio/foreground.html">
+<div class="project-thumbnail left col-md-6">
+  <div class="project-thumbnail-wrap">
+    <img src="/assets/img/foreground.jpg">
+      <div class="project-thumbnail-text">
+        <h4>Foreground Studios</h4>
+        <h5>WordPress, Web Development</h5>
+      </div>
   </div>
+</div>
+</a>
+
+<a class="transition" href="/portfolio/anderson-dentistry.html">
+<div class="project-thumbnail right col-md-6">
+  <div class="project-thumbnail-wrap">
+    <img src="./assets/img/anderson.jpg">
+      <div class="project-thumbnail-text">
+        <h4>Anderson Dentistry</h4>
+        <h5>WordPress, Web Design, Web Development</h5>
+      </div>
+  </div>
+</div>
+</a>
+
+<div class="row row-no-margin">
+<a class="transition" href="/portfolio/soundcloud.html">
+<div class="project-thumbnail left col-md-6">
+  <div class="project-thumbnail-wrap">
+    <img src="http://trinhdm.github.io/assets/img/blog_8-30_sc_macbook_preview_mine.jpg">
+      <div class="project-thumbnail-text">
+        <h4>SoundCloud: Case Study</h4>
+        <h5>UI/UX</h5>
+      </div>
+  </div>
+</div>
+</a>
+</div>
+
+<div class="col-md-4 col-md-offset-4" style="padding-bottom: 20px">
+  <a href="/portfolio/" class="transition">
+    <div class="home-button">
+      See more projects →
+    </div>
+  </a>
+</div>
+
+</div>
+
+<div id="recent-writings">
+<div class="header-spacing">
+  <span class="silver-header">Recent</span> <span class="black-header">Writings</span>
+</div>
+
+{% for post in site.posts limit:3 %}
+<div class="row writings-row">
+  <div class="col-md-3 col-sm-3 col-xs-12">
+    <h3>{{ post.title }}</h3>
+
+    <h4>{{ post.date | date: "%m.%d.%y" }}</h4>
+  </div>
+
+  <div class="col-md-7 col-sm-7 col-xs-12">
+    <span class="post-description">{{ post.description }}</span>
+  </div>
+
+  <div class="col-md-2 col-sm-2 col-xs-12">
+    <a href="{{ site.baseurl }}{{ post.url }}" class="transition">
+      <button class="btn btn-view-post">View Post</button>
+    </a>
+  </div>
+  <div class="clear"></div>
+</div>
+ {% endfor %}
+
+<div class="col-md-4 col-md-offset-4" style="padding: 30px 0;">
+  <a href="/writings/" class="transition">
+    <div class="home-button">
+      Read more writings →
+    </div>
+  </a>
+</div>
+
 </div>

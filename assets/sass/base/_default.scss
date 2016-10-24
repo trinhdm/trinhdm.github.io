@@ -1,0 +1,27 @@
+// html, body {
+//     max-width: 100%;
+//     overflow-x: hidden;
+// }
+
+body {
+  // font-weight: 600;
+  font-family: $body-font;
+  background: lighten($alto, 10%);
+  overflow-x: hidden;
+}
+
+h2 {
+  margin: 20px 0 30px;
+}
+
+a {
+  color: $dodger-blue;
+  font-weight: 600;
+  @include transition(color .3s ease-out);
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $mine-shaft;
+    @include transition(color .3s ease-in);
+  }
+}

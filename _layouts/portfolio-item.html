@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <!-- <div id="preloader">
+    </div> -->
+
+    <div class="portfolio-navigation left">
+      <div class="container left">
+        <a href="/" id="portfolio-nav-left" class="transition">
+          <span class="chevron left hover"></span>
+          <span class="chevron left"></span>
+        </a>
+      </div>
+    </div>
+    <div class="portfolio-navigation right">
+      <div class="container right">
+        <a href="/" id="portfolio-nav-right" class="transition">
+          <span class="chevron right hover"></span>
+          <span class="chevron right"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="content animated fadeIn">
+      <div class="col-md-8 col-md-offset-2">
+        {{ content }}
+      </div>
+
+      <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+
+    {% include footer.html %}
+
+    <div style="clear:both;"></div>
+
+  </body>
+
+</html>
+
+<script>
+  (function($) {
+    $('#portfolio-nav').addClass('active');
+  })(jQuery);
+</script>

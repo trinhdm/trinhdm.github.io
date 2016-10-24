@@ -1,22 +1,29 @@
-{% if page.url == '/about.html' %}
-  <li class="active">
+{% if page.url == '/portfolio/' %}
+  <li class="active" id="portfolio-nav">
 {% else %}
-  <li>
+  <li id="portfolio-nav">
 {% endif %}
-<a href="/index.html">Home</a></li>
+<a href="/portfolio/" class="transition">Portfolio</a></li>
 
-{% if page.url == '/index.html#contact' %}
+{% if page.url == '/about/' %}
   <li class="active">
 {% else %}
   <li>
 {% endif %}
-<a href="{{ site.baseurl }}/assets/pdf/resume_doreen trinh2.pdf">Resume</a></li>
+<a href="/about/" class="transition">About</a></li>
+
+<!-- {% if page.url == '/index.html#contact' %}
+  <li class="active">
+{% else %} -->
+  <li>
+<!-- {% endif %} -->
+<a href="{{ site.baseurl }}/assets/pdf/resume_doreen trinh2.pdf" class="transition">Resume</a></li>
 
 {% if page.url == '/writings/' %}
-  <li class="active">
+  <li class="active" id="writings-nav">
 {% elsif page.id %}
-  <li class="active">
+  <li class="active" id="writings-nav">
 {% else %}
-  <li>
+  <li id="writings-nav">
 {% endif %}
-<a href="/writings/">Writings</a></li>
+<a href="/writings/" class="transition">Writings</a></li>

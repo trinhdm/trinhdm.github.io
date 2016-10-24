@@ -1,12 +1,14 @@
 ---
 layout: post
-title:  "Changing content on hover through pseudo-elements and data-attributes."
+title:  "Changing Content on Hover"
 date:   2016-05-07 06:03:00 -0700
-description: 100% CSS, no JavaScript included.
+description: Through the use of pseudo-elements and data-attributes - 100% CSS, no JavaScript included.
 categories: blog, tutorial, web development
 ---
 
-<!-- "Changing content on hover by animating pseudo-elements and using data-attributes." -->
+<!-- old:
+title: "Changing content on hover by animating pseudo-elements and using data-attributes."
+description: 100% CSS, no JavaScript included. -->
 
 In this blog post, I'll discuss how I did [Foreground Studio's][fgs] navigation, where I used data-attributes and pseudo-elements to create interesting CSS hovers. I used WordPress as my CMS, so I'll be basing my post on that. Please note that animating pseudo-elements isn't supported by all browsers.
 

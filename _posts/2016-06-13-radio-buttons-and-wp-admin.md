@@ -1,10 +1,14 @@
 ---
 layout: post
-title:  "Using radio buttons in WordPress theme options."
+title:  "Radio Buttons & WordPress Admin"
 date:   2016-06-13 06:03:00 -0700
 description: Ever wondered how to implement radio buttons in your theme options page?
 categories: blog, tutorial, web development
 ---
+
+<!-- old:
+title:  "Using radio buttons in WordPress theme options."
+description: Ever wondered how to implement radio buttons in your theme options page? -->
 
 Radio buttons are a great way for the user to select a single value from a mutually exclusive set of options. I understand that coding radio buttons into a theme options page may be difficult for some, but hopefully this guide explains how to implement radio buttons as easy as possible. Before we go on ahead, I'm going to assume that you know how to create a theme options page. If not, there are numerous guides out there that could guide you in the right path.
 

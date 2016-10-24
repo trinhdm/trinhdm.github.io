@@ -1,0 +1,15 @@
+#preloader {
+  width: 100vw;
+  height: 100vh;
+  background: lighten($alto, 10%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  -webkit-animation:       fadeOut 2s;
+          animation:       fadeOut 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  opacity: 0;
+  // visibility: hidden;
+}

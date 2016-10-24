@@ -1,10 +1,14 @@
 ---
 layout: post
-title:  "Revisiting the visited (and unvisited) links."
+title:  "Visited Links"
 date:   2016-07-09 06:03:00 -0700
-description: What ever happened to them?
+description: Revisiting the visited (and unvisited) links - what ever happened to them?
 categories: blog
 ---
+
+<!-- old:
+title:  "Revisiting the visited (and unvisited) links."
+description: What ever happened to them? -->
 
 The other day, I stumbled upon an article that discussed [The Lost Art of Visited Links][lost-art-visited]. After reading the article, I realized that web developers and designers really have ditched styling visited links. For most sites, you can only guess whether or not you clicked on that one Buzzfeed article. It's very rare sight to see nowadays, even though it's could be very useful.
 
